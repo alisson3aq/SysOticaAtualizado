@@ -9,9 +9,14 @@ using System.Threading.Tasks;
 
 namespace SysOtica.Negocio.Fachada
 {
+
+
+ 
+ 
     public class Fachada : IFachada
     {
 
+        # region Cliente
         ClienteDados dao = new ClienteDados();
         ClienteControlador contr = new ClienteControlador();
         
@@ -42,5 +47,50 @@ namespace SysOtica.Negocio.Fachada
         {
             return dao.listarCliente();
         }
+        #endregion
+
+
+        #region Fornecedor 
+
+        
+        FornecedoresDados frdao = new FornecedoresDados();
+        FornecedorControlador fornColtrol = new FornecedorControlador();
+
+        public void InserirFornecedor(Fornecedor fr)
+        {
+            fornColtrol.VerificaPreenchimento(fr);
+            frdao.inserirFornecedor(fr);
+
+        }
+
+        public void AlterarFornecedor(Fornecedor fr)
+        {
+
+            fornColtrol.VerificaPreenchimento(fr);
+            frdao.alteraFornecedor(fr);
+        }
+
+
+        public void excluirFornecedor(Fornecedor fr)
+        {
+            frdao.excluiFornecedor(fr);
+
+        }
+
+        public List<Fornecedor> pesquisaFornecedor(string fr_razaosocial)
+        {
+            return frdao.pesquisarFornecedor(fr_razaosocial);
+
+        }
+
+        public List<Fornecedor> ListaFornecedor()
+        {
+           return frdao.listaFornecedor();
+
+        }
+        #endregion
+
+
+
     }
 }

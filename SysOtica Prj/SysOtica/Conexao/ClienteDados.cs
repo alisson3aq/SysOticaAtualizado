@@ -100,8 +100,9 @@ namespace SysOtica.Conexao
                     c.Cl_observacoes = retorno.GetString(retorno.GetOrdinal("cl_observacoes"));
                     lista.Add(c);
                 }
-                return lista;
                 conn.FecharConexao();
+                return lista;
+                
             }
             catch (SqlException e)
             {

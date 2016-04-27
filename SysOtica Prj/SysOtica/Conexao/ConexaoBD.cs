@@ -12,6 +12,7 @@ namespace SysOtica.Conexao
 
         public SqlConnection cone = new SqlConnection();
         string connectionStringSqlServer = @"Data Source=DESKTOP-KA9UELE\SQLEXPRESS;Initial Catalog= SysOtica;UId= sysotica;Password= 123456";
+        //@"Data Source=DESKTOP-KA9UELE\SQLEXPRESS;Initial Catalog= SysOtica;UId= sysotica;Password= 123456";
 
         public void AbrirConexao()
         {

@@ -9,11 +9,11 @@ namespace SysOtica.Conexao
 {
     public interface IFornecedorDados
     {
-        void Insert(Fornecedor fornecedor);
-        void update(Fornecedor fornecedor);
-        void delete(Fornecedor fornecedor);
+        void inserirFornecedor(Fornecedor fr);
+        void alteraFornecedor(Fornecedor fr);
+        void excluiFornecedor(Fornecedor fr);
         bool verificaduplicidade(Fornecedor fornecedor);
-        List<Cliente> select(Fornecedor filtro);
-        List<Fornecedor> pegaFornenedor();
+        List<Fornecedor> listaFornecedor();
+        List<Fornecedor> pesquisarFornecedor(string fr_fantasia);
     }
 }

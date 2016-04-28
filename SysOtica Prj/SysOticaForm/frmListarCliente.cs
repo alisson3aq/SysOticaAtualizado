@@ -101,7 +101,7 @@ namespace SysOticaForm
             }
             catch (Exception ex)
             {
-                throw new GuidVazioException("Falha na comunicação com o banco de dados. \n" + ex.Message);
+                MessageBox.Show ("Falha na comunicação com o banco de dados. \n" + ex.Message);
             }
         }
 

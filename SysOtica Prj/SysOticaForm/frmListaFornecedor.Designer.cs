@@ -29,14 +29,6 @@
         private void InitializeComponent()
         {
             this.dataGridFornecedor = new System.Windows.Forms.DataGridView();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.btnPesquisar = new System.Windows.Forms.Button();
-            this.btnSair = new System.Windows.Forms.Button();
-            this.btnAlterar = new System.Windows.Forms.Button();
-            this.btnExcluir = new System.Windows.Forms.Button();
-            this.btnListar = new System.Windows.Forms.Button();
             this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.razaosocial = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.inscricaoestadual = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -55,6 +47,14 @@
             this.telefonerepresentante = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.observacoes = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cnpj = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnListar = new System.Windows.Forms.Button();
+            this.btnExcluir = new System.Windows.Forms.Button();
+            this.btnAlterar = new System.Windows.Forms.Button();
+            this.btnSair = new System.Windows.Forms.Button();
+            this.btnPesquisar = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridFornecedor)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -89,88 +89,6 @@
             this.dataGridFornecedor.Size = new System.Drawing.Size(918, 256);
             this.dataGridFornecedor.TabIndex = 0;
             this.dataGridFornecedor.DoubleClick += new System.EventHandler(this.dataGridFornecedor_DoubleClick);
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.btnListar);
-            this.groupBox1.Controls.Add(this.btnExcluir);
-            this.groupBox1.Controls.Add(this.btnAlterar);
-            this.groupBox1.Controls.Add(this.btnSair);
-            this.groupBox1.Controls.Add(this.btnPesquisar);
-            this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.textBox1);
-            this.groupBox1.Controls.Add(this.dataGridFornecedor);
-            this.groupBox1.Location = new System.Drawing.Point(12, 12);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(940, 354);
-            this.groupBox1.TabIndex = 1;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "groupBox1";
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(217, 16);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(241, 20);
-            this.textBox1.TabIndex = 1;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(13, 19);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(187, 13);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Digite a Razão Social para pesquisar: ";
-            // 
-            // btnPesquisar
-            // 
-            this.btnPesquisar.Location = new System.Drawing.Point(480, 12);
-            this.btnPesquisar.Name = "btnPesquisar";
-            this.btnPesquisar.Size = new System.Drawing.Size(103, 23);
-            this.btnPesquisar.TabIndex = 3;
-            this.btnPesquisar.Text = "Pesquisar";
-            this.btnPesquisar.UseVisualStyleBackColor = true;
-            this.btnPesquisar.Click += new System.EventHandler(this.btnPesquisar_Click);
-            // 
-            // btnSair
-            // 
-            this.btnSair.Location = new System.Drawing.Point(16, 325);
-            this.btnSair.Name = "btnSair";
-            this.btnSair.Size = new System.Drawing.Size(104, 23);
-            this.btnSair.TabIndex = 4;
-            this.btnSair.Text = "Sair ";
-            this.btnSair.UseVisualStyleBackColor = true;
-            // 
-            // btnAlterar
-            // 
-            this.btnAlterar.Location = new System.Drawing.Point(824, 325);
-            this.btnAlterar.Name = "btnAlterar";
-            this.btnAlterar.Size = new System.Drawing.Size(110, 23);
-            this.btnAlterar.TabIndex = 5;
-            this.btnAlterar.Text = "Alterar";
-            this.btnAlterar.UseVisualStyleBackColor = true;
-            this.btnAlterar.Click += new System.EventHandler(this.btnAlterar_Click);
-            // 
-            // btnExcluir
-            // 
-            this.btnExcluir.Location = new System.Drawing.Point(717, 325);
-            this.btnExcluir.Name = "btnExcluir";
-            this.btnExcluir.Size = new System.Drawing.Size(101, 23);
-            this.btnExcluir.TabIndex = 6;
-            this.btnExcluir.Text = "Excluir";
-            this.btnExcluir.UseVisualStyleBackColor = true;
-            this.btnExcluir.Click += new System.EventHandler(this.btnExcluir_Click);
-            // 
-            // btnListar
-            // 
-            this.btnListar.Location = new System.Drawing.Point(824, 14);
-            this.btnListar.Name = "btnListar";
-            this.btnListar.Size = new System.Drawing.Size(110, 23);
-            this.btnListar.TabIndex = 7;
-            this.btnListar.Text = "Listar";
-            this.btnListar.UseVisualStyleBackColor = true;
-            this.btnListar.Click += new System.EventHandler(this.btnListar_Click);
             // 
             // ID
             // 
@@ -297,6 +215,89 @@
             this.cnpj.HeaderText = "CNPJ";
             this.cnpj.Name = "cnpj";
             this.cnpj.ReadOnly = true;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.btnListar);
+            this.groupBox1.Controls.Add(this.btnExcluir);
+            this.groupBox1.Controls.Add(this.btnAlterar);
+            this.groupBox1.Controls.Add(this.btnSair);
+            this.groupBox1.Controls.Add(this.btnPesquisar);
+            this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.dataGridFornecedor);
+            this.groupBox1.Location = new System.Drawing.Point(12, 12);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(940, 354);
+            this.groupBox1.TabIndex = 1;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "groupBox1";
+            // 
+            // btnListar
+            // 
+            this.btnListar.Location = new System.Drawing.Point(824, 14);
+            this.btnListar.Name = "btnListar";
+            this.btnListar.Size = new System.Drawing.Size(110, 23);
+            this.btnListar.TabIndex = 7;
+            this.btnListar.Text = "Listar";
+            this.btnListar.UseVisualStyleBackColor = true;
+            this.btnListar.Click += new System.EventHandler(this.btnListar_Click);
+            // 
+            // btnExcluir
+            // 
+            this.btnExcluir.Location = new System.Drawing.Point(717, 325);
+            this.btnExcluir.Name = "btnExcluir";
+            this.btnExcluir.Size = new System.Drawing.Size(101, 23);
+            this.btnExcluir.TabIndex = 6;
+            this.btnExcluir.Text = "Excluir";
+            this.btnExcluir.UseVisualStyleBackColor = true;
+            this.btnExcluir.Click += new System.EventHandler(this.btnExcluir_Click);
+            // 
+            // btnAlterar
+            // 
+            this.btnAlterar.Location = new System.Drawing.Point(824, 325);
+            this.btnAlterar.Name = "btnAlterar";
+            this.btnAlterar.Size = new System.Drawing.Size(110, 23);
+            this.btnAlterar.TabIndex = 5;
+            this.btnAlterar.Text = "Alterar";
+            this.btnAlterar.UseVisualStyleBackColor = true;
+            this.btnAlterar.Click += new System.EventHandler(this.btnAlterar_Click);
+            // 
+            // btnSair
+            // 
+            this.btnSair.Location = new System.Drawing.Point(16, 325);
+            this.btnSair.Name = "btnSair";
+            this.btnSair.Size = new System.Drawing.Size(104, 23);
+            this.btnSair.TabIndex = 4;
+            this.btnSair.Text = "Sair ";
+            this.btnSair.UseVisualStyleBackColor = true;
+            this.btnSair.Click += new System.EventHandler(this.btnSair_Click);
+            // 
+            // btnPesquisar
+            // 
+            this.btnPesquisar.Location = new System.Drawing.Point(480, 12);
+            this.btnPesquisar.Name = "btnPesquisar";
+            this.btnPesquisar.Size = new System.Drawing.Size(103, 23);
+            this.btnPesquisar.TabIndex = 3;
+            this.btnPesquisar.Text = "Pesquisar";
+            this.btnPesquisar.UseVisualStyleBackColor = true;
+            this.btnPesquisar.Click += new System.EventHandler(this.btnPesquisar_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(13, 19);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(187, 13);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "Digite a Razão Social para pesquisar: ";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(217, 16);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(241, 20);
+            this.textBox1.TabIndex = 1;
             // 
             // frmListaFornecedor
             // 

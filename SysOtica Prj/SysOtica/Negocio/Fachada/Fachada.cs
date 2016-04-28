@@ -91,6 +91,47 @@ namespace SysOtica.Negocio.Fachada
         #endregion
 
 
+        #region Produto
+
+        ProdutoDados pdao = new ProdutoDados();
+        ProdutoControlador pColtrol = new ProdutoControlador();
+
+        public void InserirProduto(Produto p)
+        {
+            pColtrol.verificaPreenchimento(p);
+            pdao.inserirProduto(p);
+
+        }
+
+        public void AlterarProduto(Produto p)
+        {
+
+            pColtrol.verificaPreenchimento(p);
+            pdao.alterarProduto(p);
+        }
+
+
+        public void excluirProduto(Produto p)
+        {
+            pdao.excluirProduto(p);
+
+        }
+
+        public List<Produto> pesquisaProduto(string pr_descricao)
+        {
+            return pdao.pesquisarProduto(pr_descricao);
+
+        }
+
+        public List<Produto> ListaProduto()
+        {
+            return pdao.listarProduto();
+
+        }
+
+
+        #endregion
+
 
     }
 }

@@ -49,9 +49,6 @@ namespace SysOticaForm
 
 
 
-
-
-
         }
 
         private void btnLimpar_Click(object sender, EventArgs e)
@@ -92,38 +89,69 @@ namespace SysOticaForm
 
         private void btnSalvar_Click(object sender, EventArgs e)
         {
-            Fornecedor fr = new Fornecedor();
+
 
             try
             {
-                AlteraFornecedor.Fr_id = Convert.ToInt32(txtID.Text);
-                AlteraFornecedor.Fr_razaosocial = textBoxRazaosocial.Text;
-                AlteraFornecedor.Fr_cnpj = maskedTextBoxCNPJ.Text;
-                AlteraFornecedor.Fr_inscricaoestadual = textBoxInscEstadual.Text;
-                AlteraFornecedor.Fr_fantasia = textBoxFantasia.Text;
-                AlteraFornecedor.Fr_endereco = textBoxEndereco.Text;
-                AlteraFornecedor.Fr_cidade = textBoxCidade.Text;
-                AlteraFornecedor.Fr_uf = textBoxUF.Text;
-                AlteraFornecedor.Fr_bairro = txtBairro.Text;
-                AlteraFornecedor.Fr_cep = maskedTextBoxCEP.Text;
-                AlteraFornecedor.Fr_contato = textBoxContato.Text;
-                AlteraFornecedor.Fr_telefone = maskedTextBoxTelefone.Text;
-                AlteraFornecedor.Fr_fax = textBoxFax.Text;
-                AlteraFornecedor.Fr_email = textBoxEmail.Text;
-                AlteraFornecedor.Fr_nomerepresentante = textBoxNomeRep.Text;
-                AlteraFornecedor.Fr_telefonerepresentante = maskedTextBoxTelRep.Text;
-                AlteraFornecedor.Fr_celularrepresentante = maskedTextBoxCelRep.Text;
-                AlteraFornecedor.Fr_observacoes = richTextBoxObservacoes.Text;
 
+                Fornecedor fr = new Fornecedor();
 
-                //if (AlteraFornecedor != null)
-                //{
+                {
+                    fr.Fr_razaosocial = textBoxRazaosocial.Text;
+                    fr.Fr_cnpj = maskedTextBoxCNPJ.Text;
+                    fr.Fr_inscricaoestadual = textBoxInscEstadual.Text;
+                    fr.Fr_fantasia = textBoxFantasia.Text;
+                    fr.Fr_endereco = textBoxEndereco.Text;
+                    fr.Fr_cidade = textBoxCidade.Text;
+                    fr.Fr_uf = textBoxUF.Text;
+                    fr.Fr_bairro = txtBairro.Text;
+                    fr.Fr_cep = maskedTextBoxCEP.Text;
+                    fr.Fr_contato = textBoxContato.Text;
+                    fr.Fr_telefone = maskedTextBoxTelefone.Text;
+                    fr.Fr_fax = textBoxFax.Text;
+                    fr.Fr_email = textBoxEmail.Text;
+                    fr.Fr_nomerepresentante = textBoxNomeRep.Text;
+                    fr.Fr_telefonerepresentante = maskedTextBoxTelRep.Text;
+                    fr.Fr_celularrepresentante = maskedTextBoxCelRep.Text;
+                    fr.Fr_observacoes = richTextBoxObservacoes.Text;
+
+                }
+                if (AlteraFornecedor == null)
+                {
                     fachada.AlterarFornecedor(fr);
-                    MessageBox.Show("Cliente alterado com sucesso!");
+                    MessageBox.Show("Fornecedor alterado com sucesso!");
                     LimparCampos();
-                //}
+                }
+                else
+                {
 
 
+                    AlteraFornecedor.Fr_id = Convert.ToInt32(txtID.Text);
+                    AlteraFornecedor.Fr_razaosocial = textBoxRazaosocial.Text;
+                    AlteraFornecedor.Fr_cnpj = maskedTextBoxCNPJ.Text;
+                    AlteraFornecedor.Fr_inscricaoestadual = textBoxInscEstadual.Text;
+                    AlteraFornecedor.Fr_fantasia = textBoxFantasia.Text;
+                    AlteraFornecedor.Fr_endereco = textBoxEndereco.Text;
+                    AlteraFornecedor.Fr_cidade = textBoxCidade.Text;
+                    AlteraFornecedor.Fr_uf = textBoxUF.Text;
+                    AlteraFornecedor.Fr_bairro = txtBairro.Text;
+                    AlteraFornecedor.Fr_cep = maskedTextBoxCEP.Text;
+                    AlteraFornecedor.Fr_contato = textBoxContato.Text;
+                    AlteraFornecedor.Fr_telefone = maskedTextBoxTelefone.Text;
+                    AlteraFornecedor.Fr_fax = textBoxFax.Text;
+                    AlteraFornecedor.Fr_email = textBoxEmail.Text;
+                    AlteraFornecedor.Fr_nomerepresentante = textBoxNomeRep.Text;
+                    AlteraFornecedor.Fr_telefonerepresentante = maskedTextBoxTelRep.Text;
+                    AlteraFornecedor.Fr_celularrepresentante = maskedTextBoxCelRep.Text;
+                    AlteraFornecedor.Fr_observacoes = richTextBoxObservacoes.Text;
+
+                    fachada.AlterarFornecedor(AlteraFornecedor);
+                    MessageBox.Show("Fornecedor alterado com sucesso!");
+                    LimparCampos();
+                }
+
+
+                 
             }
 
             catch (Exception ex)

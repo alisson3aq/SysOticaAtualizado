@@ -40,7 +40,7 @@ namespace SysOtica.Conexao
         public void alteraFornecedor(Fornecedor fr)
         {
         
-            string sql = "UPDATE Fornecedor SET  fr_razaosocial= ' " + fr.Fr_razaosocial + "', fr_inscricaoestadual = '" + fr.Fr_inscricaoestadual + "', fr_fantasia = '" + fr.Fr_fantasia + "', fr_endereco = '" + fr.Fr_endereco + "', fr_cidade = '" + fr.Fr_cidade + "', fr_uf = '" + fr.Fr_uf + "', fr_bairro = '" + fr.Fr_bairro + "', fr_cep = '" + fr.Fr_cep + "', fr_contato = '" + fr.Fr_contato + "', fr_telefone ='" + fr.Fr_telefone + "', fr_telefone = '" + fr.Fr_fax + "', fr_email = '" + fr.Fr_email + "', fr_nomerepresentante = '" + fr.Fr_nomerepresentante + "', fr_telefonerepresentante = '" + fr.Fr_telefonerepresentante + "', fr_celularrepresentante =  '" + fr.Fr_celularrepresentante + "', fr_observacoes = '" + fr.Fr_observacoes + "', fr_cnpj = '" + fr.Fr_cnpj + "'WHERE fr_id = " + (fr.Fr_id) + "";
+            string sql = "UPDATE Fornecedor SET  fr_razaosocial= ' " + fr.Fr_razaosocial + "', fr_inscricaoestadual = '" + fr.Fr_inscricaoestadual + "', fr_fantasia = '" + fr.Fr_fantasia + "', fr_endereco = '" + fr.Fr_endereco + "', fr_cidade = '" + fr.Fr_cidade + "', fr_uf = '" + fr.Fr_uf + "', fr_bairro = '" + fr.Fr_bairro + "', fr_cep = '" + fr.Fr_cep + "', fr_contato = '" + fr.Fr_contato + "', fr_telefone ='" + fr.Fr_telefone + "', fr_fax = '" + fr.Fr_fax + "', fr_email = '" + fr.Fr_email + "', fr_nomerepresentante = '" + fr.Fr_nomerepresentante + "', fr_telefonerepresentante = '" + fr.Fr_telefonerepresentante + "', fr_celularrepresentante =  '" + fr.Fr_celularrepresentante + "', fr_observacoes = '" + fr.Fr_observacoes + "', fr_cnpj = '" + fr.Fr_cnpj + "'WHERE fr_id = " + (fr.Fr_id) + "";
 
             try
             {
@@ -77,7 +77,7 @@ namespace SysOtica.Conexao
 
         public List<Fornecedor> listaFornecedor()
        {
-            string sql = "SELECT * FROM Fornecedor Order by fr_id";
+            string sql = "SELECT fr_id, fr_razaosocial, fr_inscricaoestadual, fr_fantasia, fr_endereco, fr_cidade, fr_uf, fr_bairro, fr_cep, fr_contato, fr_telefone, fr_fax, fr_email, fr_nomerepresentante, fr_celularrepresentante, fr_telefonerepresentante, fr_observacoes, fr_cnpj  FROM Fornecedor Order by fr_id";
             List<Fornecedor> lista = new List<Fornecedor>();
             Fornecedor fr;
 

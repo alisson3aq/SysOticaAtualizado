@@ -1,4 +1,5 @@
 ﻿using SysOtica.Negocio.Classes_Basicas;
+using SysOtica.Negocio.Excecoes;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -9,227 +10,139 @@ using System.Threading.Tasks;
 
 namespace SysOtica.Conexao
 {
-    class ProdutoDados : ConexaoBD, IConexaoBD
-    {
-        //    public void Insert(Produto produto)
-        //    {
-        //        try
-        //        {
-        //            //abrir a conexão
-        //            this.Conecta();
-        //            string sql = "INSERT INTO Produto (pr_descricao, pr_grife, pr_valor, pr_estoqueminimo, fr_id, pr_categoria,  pr_quantidade) values ( @pr_descricao, @pr_grife, @pr_valor, @pr_estoqueminimo, @fr_id, @pr_categoria, @pr_quantidade)";
-        //            //instrucao a ser executada
-        //            SqlCommand cmd = new SqlCommand(sql, this.sqlConn);
+   public class ProdutoDados : IProdutoDados
+    {      
+        ConexaoBD conn = new ConexaoBD();
 
-        //            cmd.Parameters.Add("@pr_descricao", SqlDbType.VarChar);
-        //            cmd.Parameters["@pr_descricao"].Value = produto.Pr_descricao;
+    
+        public void inserirProduto(Produto p)
+        {
+            string sql = "INSERT INTO Produto VALUES ('" + p.Pr_descricao + "','" + p.Pr_grife + "','" + p.Pr_valor + "','" + p.Pr_estoqueminimo + "','" + p.Pr_Categoria + "','" + p.Pr_qtd + "')";
 
-        //            /*cmd.Parameters.Add("@pr_unidade", SqlDbType.VarChar);
-        //            cmd.Parameters["@pr_unidade"].Value = produto.Pr_unidade;*/
+            try
+            {
+                conn.AbrirConexao();
+                SqlCommand cmd = new SqlCommand(sql, conn.cone);
+                cmd.ExecuteNonQuery();
+                conn.FecharConexao();
+            }
+            catch (SqlException e)
+            {
+                throw new BancoDeDadosException("Falha na comunicação com o banco de dados. \n" + e.Message);
+            }
+        }
+        public void alterarProduto(Produto p)
+        {
+            string sql = "UPDATE Produto SET pr_descricao = '" + p.Pr_descricao + "',pr_grife ='" + p.Pr_grife + "', pr_valor ='" + p.Pr_valor + "', pr_estoqueminimo ='" + p.Pr_estoqueminimo + "', pr_categoria = '" + p.Pr_Categoria + "', pr_qtd ='" + p.Pr_qtd + "' WHERE pr_id = " + (p.Pr_id) + "";
 
-        //            cmd.Parameters.Add("@pr_grife", SqlDbType.VarChar);
-        //            cmd.Parameters["@pr_grife"].Value = produto.Pr_grife;
+            try
+            {
+                conn.AbrirConexao();
+                SqlCommand cmd = new SqlCommand(sql, conn.cone);
+                cmd.ExecuteNonQuery();
+                conn.FecharConexao();
+            }
+            catch (SqlException e)
+            {
+                throw new BancoDeDadosException("Falha na comunicação com o banco de dados. \n" + e.Message);
+            }
 
-        //            cmd.Parameters.Add("@pr_valor", SqlDbType.VarChar);
-        //            cmd.Parameters["@pr_valor"].Value = produto.Pr_valor;
-
-        //            cmd.Parameters.Add("@pr_quantidade", SqlDbType.VarChar);
-        //            cmd.Parameters["@pr_quantidade"].Value = produto.Pr_qtd;
-
-        //            cmd.Parameters.Add("@pr_estoqueminimo", SqlDbType.VarChar);
-        //            cmd.Parameters["@pr_estoqueminimo"].Value = produto.Pr_estoqueminimo;
-
-        //            cmd.Parameters.Add("@fr_id", SqlDbType.Int);
-        //            cmd.Parameters["@fr_id"].Value = produto.Fr_id;
-
-        //            cmd.Parameters.Add("@pr_categoria", SqlDbType.VarChar);
-        //            cmd.Parameters["@pr_categoria"].Value = produto.Pr_Categoria;
-
-
-
-        //            //executando a instrucao 
-        //            cmd.ExecuteNonQuery();
-        //            //liberando a memoria 
-        //            cmd.Dispose();
-        //            //fechando a conexao
-        //            this.Desconecta();
-        //        }
-        //        catch (Exception ex)
-        //        {
-        //            throw new Exception("Erro ao Conectar e inserir " + ex.Message);
-        //        }
-        //    }
-
-        //    public void update(Produto produto)
-        //    {
-        //        try
-        //        {
-        //            //abrir a conexão
-        //            this.Conecta();
-        //            string sql = "UPDATE produto SET ( pr_descricao = @pr_descricao, pr_unidade = @pr_unidade,pr_grupo = @pr_grupo,pr_grife = @pr_grife, pr_valor = @pr_valor,pr_qtd = @pr_qtd,pr_estoqueminimo = @pr_estoqueminimo) WHERE pr_id = @pr_id;";
-        //            //instrucao a ser executada
-        //            SqlCommand cmd = new SqlCommand(sql, this.sqlConn);
-
-        //            cmd.Parameters.Add("pr_id", SqlDbType.Int);
-        //            cmd.Parameters["@pr_id"].Value = produto.Pr_id;
-
-        //            cmd.Parameters.Add("@pr_descricao", SqlDbType.VarChar);
-        //            cmd.Parameters["@pr_descricao"].Value = produto.Pr_descricao;
-
-        //            cmd.Parameters.Add("@pr_unidade", SqlDbType.VarChar);
-        //            cmd.Parameters["@pr_unidade"].Value = produto.Pr_unidade;
-
-        //            cmd.Parameters.Add("@pr_grife", SqlDbType.VarChar);
-        //            cmd.Parameters["@pr_grife"].Value = produto.Pr_grife;
-
-        //            cmd.Parameters.Add("@pr_valor", SqlDbType.VarChar);
-        //            cmd.Parameters["@pr_valor"].Value = produto.Pr_valor;
-
-        //            cmd.Parameters.Add("@pr_qtd", SqlDbType.VarChar);
-        //            cmd.Parameters["@pr_qtd"].Value = produto.Pr_qtd;
-
-        //            cmd.Parameters.Add("@pr_estoqueminimo", SqlDbType.VarChar);
-        //            cmd.Parameters["@pr_estoqueminimo"].Value = produto.Pr_estoqueminimo;
-
-        //            cmd.Parameters.Add("@pr_categoria", SqlDbType.VarChar);
-        //            cmd.Parameters["@pr_categoria"].Value = produto.Pr_Categoria;
+        }
+        public void excluirProduto(Produto p)
+        {
+            string sql = "DELETE FROM Produto WHERE pr_id =" + (p.Pr_id) + "";
+            try
+            {
+                conn.AbrirConexao();
+                SqlCommand cmd = new SqlCommand(sql, conn.cone);
+                cmd.ExecuteNonQuery();
+                conn.FecharConexao();
+            }
+            catch (SqlException e)
+            {
+                throw new BancoDeDadosException("Falha na comunicação com o banco de dados. \n" + e.Message);
+            }
+        }
 
 
-        //            //executando a instrucao 
-        //            cmd.ExecuteNonQuery();
-        //            //liberando a memoria 
-        //            cmd.Dispose();
-        //            //fechando a conexao
-        //            this.Desconecta();
-        //        }
-        //        catch (Exception ex)
-        //        {
-        //            throw new Exception("erro ao conectar e atualizar " + ex.Message);
-        //        }
-        //    }
+        public List<Produto> listarProduto()
+        {
+            string sql = "SELECT pr_id, pr_descricao, pr_grife, pr_valor, pr_estoqueminimo, pr_categoria, pr_qtd FROM Produto";
+            List<Produto> lista = new List<Produto>();
+            Produto p;
+        
+          
+        try
+            {
+                conn.AbrirConexao();
+                SqlCommand cmd = new SqlCommand(sql, conn.cone);
+                SqlDataReader retorno = cmd.ExecuteReader();
 
-        //    public void delete(Produto produto)
-        //    {
-        //        try
-        //        {
-        //            //abrir a conexão
-        //            this.Conecta();
-        //            string sql = "DELETE FROM produto WHERE pr_id = @pr_id";
-        //            //instrucao a ser executada
-        //            SqlCommand cmd = new SqlCommand(sql, this.sqlConn);
-        //            cmd.Parameters.Add("@pr_id", SqlDbType.Int);
-        //            cmd.Parameters["@pr_id"].Value = produto.Pr_id;
-        //            //executando a instrucao 
-        //            cmd.ExecuteNonQuery();
-        //            //liberando a memoria 
-        //            cmd.Dispose();
-        //            //fechando a conexao
-        //            this.Desconecta();
-        //        }
-        //        catch (Exception
-        //            ex)
-        //        {
-        //            throw new Exception("erro ao conectar e remover " + ex.Message);
-        //        }
-        //    }
+                while (retorno.Read())
+                {
+                    p = new Produto();
+                    p.Pr_id = retorno.GetInt32(retorno.GetOrdinal("pr_id"));
+                    p.Pr_descricao = retorno.GetString(retorno.GetOrdinal("pr_descricao"));                 
+                    p.Pr_grife = retorno.GetString(retorno.GetOrdinal("pr_grife"));
+                    p.Pr_valor = retorno.GetDecimal(retorno.GetOrdinal("pr_valor"));
+                    p.Pr_estoqueminimo= retorno.GetInt32(retorno.GetOrdinal("pr_estoqueminimo"));
+                    p.Pr_Categoria = retorno.GetString(retorno.GetOrdinal("pr_categoria"));
+                    p.Pr_qtd = retorno.GetInt32(retorno.GetOrdinal("pr_qtd"));
+                    
+                    lista.Add(p);
+                }
+                conn.FecharConexao();
+                return lista;
 
-        //    public bool verificaduplicidade(Produto produto)
-        //    {
-        //        bool retorno = false;
-        //        try
-        //        {
-        //            this.Conecta();
-        //            //instrucao a ser executada
-        //            string sql = "select * from produto where pr_id = @pr_id";
-        //            SqlCommand cmd = new SqlCommand(sql, sqlConn);
-        //            cmd.Parameters.Add("@pr_id", SqlDbType.Int);
-        //            cmd.Parameters["@pr_id"].Value = produto.Pr_id;
-        //            //executando a instrucao e colocando o resultado em um leitor
-        //            SqlDataReader dbreader = cmd.ExecuteReader();
-        //            //lendo o resultado da consulta
-        //            while (dbreader.Read())
-        //            {
-        //                retorno = true;
-        //                break;
-        //            }
-        //            //fechando o leitor de resultados
-        //            dbreader.Close();
-        //            //liberando a memoria 
-        //            cmd.Dispose();
-        //            //fechando a conexao
-        //            this.Desconecta();
-        //        }
-        //        catch (Exception ex)
-        //        {
-        //            throw new Exception("erro ao conectar e selecionar " + ex.Message);
-        //        }
-        //        return retorno;
-        //    }
+            }
+            catch (SqlException e)
+            {
+                throw new BancoDeDadosException("Falha na comunicação com o banco de dados. \n" + e.Message);
+            }
+        }
 
-        //    public List<Produto> select(Produto filtro)
-        //    {
-        //        List<Produto> retorno = new List<Produto>();
-        //        try
-        //        {
-        //            this.Conecta();
-        //            //instrucao a ser executada
-        //            string sql = "select * from produto where pr_id = @pr_id";
-        //            //se foi passada uma matricula válida, esta matricula entrará como critério de filtro
-        //            if (filtro.Pr_id > 0)
-        //            {
-        //                sql += " and  pr_id = @pr_id";
-        //            }
-        //            //se foi passada uma grife válido, esta grife entrará como critério de filtro
-        //            if (filtro.Pr_grife != null && filtro.Pr_grife.Trim().Equals("") == false)
-        //            {
-        //                sql += " and nome like '%@Pr_grife%'";
-        //            }
-        //            SqlCommand cmd = new SqlCommand(sql, sqlConn);
 
-        //            //se foi passada uma matricula válida, esta matricula entrará como critério de filtro
-        //            if (filtro.Pr_id > 0)
-        //            {
-        //                cmd.Parameters.Add("@pr_id", SqlDbType.Int);
-        //                cmd.Parameters["@pr_id"].Value = filtro.Pr_id;
-        //            }
-        //            //se foi passada uma grife válido, esta grife entrará como critério de filtro
-        //            if (filtro.Pr_grife != null && filtro.Pr_grife.Trim().Equals("") == false)
-        //            {
-        //                cmd.Parameters.Add("@grife", SqlDbType.VarChar);
-        //                cmd.Parameters["@grife"].Value = filtro.Pr_grife;
+        public List<Produto> pesquisarProduto(string pr_descricao)
+        {
+            string sql = "SELECT  SELECT  pr_descricao, pr_grife, pr_valor, pr_estoqueminimo, pr_categoria, pr_qtd FROM Produto";
+            if (pr_descricao != "")
+            {
+                sql += "WHERE pr_descricao ILIKE @pr_descricao";
+            }
+            List<Produto> lista = new List<Produto>();
+            Produto p = new Produto();
 
-        //            }
-        //            //executando a instrucao e colocando o resultado em um leitor
-        //            SqlDataReader dbreader = cmd.ExecuteReader();
-        //            //lendo o resultado da consulta
-        //            while (dbreader.Read())
-        //            {
-        //                Produto produto = new Produto();
-        //                //acessando os valores das colunas do resultado
+            try
+            {
+                conn.AbrirConexao();
+                SqlCommand cmd = new SqlCommand(sql, conn.cone);
+                if (pr_descricao != "")
+                {
+                    cmd.Parameters.AddWithValue("@pr_descricao", "%" + pr_descricao + "%");
+                }
+                SqlDataReader retorno = cmd.ExecuteReader();
+                while (retorno.Read())
+                {
 
-        //                produto.Pr_id = dbreader.GetInt32(dbreader.GetOrdinal("@pr_id"));
-        //                produto.Pr_descricao = dbreader.GetString(dbreader.GetOrdinal("@pr_descricao"));
-        //                produto.Pr_unidade = dbreader.GetString(dbreader.GetOrdinal("@pr_unidade"));
-        //                produto.Pr_Categoria = dbreader.GetString(dbreader.GetOrdinal("@pr_categoria"));
-        //                produto.Pr_grife = dbreader.GetString(dbreader.GetOrdinal("@pr_grife"));
-        //                produto.Pr_valor = dbreader.GetDouble(dbreader.GetOrdinal("@pr_valor"));
-        //                produto.Pr_qtd = dbreader.GetInt32(dbreader.GetOrdinal("@pr_qtd"));
-        //                produto.Pr_estoqueminimo = dbreader.GetInt32(dbreader.GetOrdinal("@pr_estoqueminimo"));
+                    p = new Produto();
+                    p.Pr_id = retorno.GetInt32(retorno.GetOrdinal("pr_id"));
+                    p.Pr_descricao = retorno.GetString(retorno.GetOrdinal("pr_descricao"));
+                    p.Pr_grife = retorno.GetString(retorno.GetOrdinal("pr_grife"));
+                    p.Pr_valor = retorno.GetDecimal(retorno.GetOrdinal("pr_valor"));
+                    p.Pr_estoqueminimo = retorno.GetInt32(retorno.GetOrdinal("pr_estoqueminimo"));
+                    p.Pr_Categoria = retorno.GetString(retorno.GetOrdinal("pr_categoria"));
+                    p.Pr_qtd = retorno.GetInt32(retorno.GetOrdinal("pr_qtd"));
 
-        //                retorno.Add(produto);
-        //            }
-        //            //fechando o leitor de resultados
-        //            dbreader.Close();
-        //            //liberando a memoria 
-        //            cmd.Dispose();
-        //            //fechando a conexao
-        //            this.Desconecta();
-        //        }
-        //        catch (Exception ex)
-        //        {
-        //            throw new Exception("erro ao conectar e selecionar " + ex.Message);
-        //        }
-        //        return retorno;
-        //    }
+                    lista.Add(p);
+                }
+                conn.FecharConexao();
+                return lista;
+
+            }
+            catch (SqlException e)
+            {
+                throw new BancoDeDadosException("Falha na comunicação com o banco de dados. \n" + e.Message);
+            }
+        }
     }
 }

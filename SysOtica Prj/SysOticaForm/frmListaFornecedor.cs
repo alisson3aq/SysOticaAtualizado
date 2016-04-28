@@ -127,6 +127,10 @@ namespace SysOticaForm
             dataGridFornecedor.DataSource = fachada.pesquisarCliente(btnPesquisar.Text);
         }
 
+        private void btnSair_Click(object sender, EventArgs e)
+        {
+            Dispose();
+        }
     }
 
 

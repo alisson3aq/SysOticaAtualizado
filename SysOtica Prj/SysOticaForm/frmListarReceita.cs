@@ -104,7 +104,7 @@ namespace SysOticaForm
 
         private void btnExcluir_Click(object sender, EventArgs e)
         {
-            Produto c = new Produto();
+            Receita receita = new Receita();
 
             try
             {

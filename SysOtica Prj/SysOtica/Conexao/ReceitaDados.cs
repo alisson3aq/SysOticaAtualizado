@@ -16,8 +16,8 @@ namespace SysOtica.Conexao
 
         public void inserirReceita(Receita receita)
         {
-
-            string sql = "INSERT INTO Receita VALUES ('"  + receita.Rc_historico + "','"     + receita.Rc_lodesferico + "','"   + receita.Rc_loeesferico + "','" + receita.Rc_podesferico + "','"  + 
+           // '"  + receita.Rc_historico + "',
+            string sql = "INSERT INTO Receita VALUES ('"  + receita.Rc_lodesferico + "','"   + receita.Rc_loeesferico + "','" + receita.Rc_podesferico + "','"  + 
                "' + '" + receita.Rc_poeesferico + "','"   + receita.Rc_lodcilindrico + "','" + receita.Rc_loecilindrico + "','" + receita.Rc_podcilindrico +"','" + 
                          receita.Rc_poecilindrico + "','" + receita.Rc_lodeixo + "', '"      + receita.Rc_loeeixo + "','"       + receita.Rc_podeixo + "','"      + receita.Rc_poeeixo + "', '" + 
                          receita.Rc_lodaltura + "', '"    + receita.Rc_loealtura+ "', '"     + receita.Rc_podaltura + "', '"    + receita.Rc_poealtura + "', '"   + receita.Rc_loddnp + "','" + 
@@ -49,7 +49,7 @@ namespace SysOtica.Conexao
                         receita.Rc_lodaltura + "',                     rc_loealtura ='"     + receita.Rc_loealtura + "',     rc_podaltura = '"   + receita.Rc_podaltura + "',      rc_poealtura = '"    + receita.Rc_poealtura + "',     rc_loddnp ='"        + receita.Rc_loddnp + "',     rc_loednp='" +
                         receita.Rc_loednp + "',                        rc_poddnp = '"       + receita.Rc_poddnp + "',        rc_poednp ='"       + receita.Rc_poednp + "',         rc_adicao ='"        + receita.Rc_adicao + "',        rc_nomemedico ='"    + receita.Rc_nomemedico + "', rc_observacoes ='" +
                         receita.Rc_observacoes + "',                   rc_data ='"          + receita.Rc_data + "',          rc_dtavalidade ='"  + receita.Rc_dtavalidade + "'     WHERE rc_id = "      + (receita.Rc_id) + "";
-            receita.rc_loe
+            
             
             try
             {

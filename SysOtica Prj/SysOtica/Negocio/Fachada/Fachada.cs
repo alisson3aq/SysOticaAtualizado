@@ -176,8 +176,49 @@ namespace SysOtica.Negocio.Fachada
 
 
 
-        #endregion 
+        #endregion
 
+
+        #region Usuario
+
+        UsuarioDados usudao = new UsuarioDados();
+        UsuarioControlador usuControl = new UsuarioControlador();
+
+        public void InserirUsuario(Usuario usu)
+        {
+             usuControl.VerificaPreenchimento(usu);
+             usudao.inserirUsuario(usu);
+
+        }
+
+        public void AlterarUsuario(Usuario usu)
+        {
+
+            usuControl.VerificaPreenchimento(usu);
+            usudao.alteraUsuario(usu);
+        }
+
+
+        public void ExcluirUsuario(Usuario usu)
+        {
+            usudao.deleteUsuario(usu);
+
+        }
+
+        public List<Usuario> PesquisaUsuario(string us_nome)
+        {
+            return usudao.pesquisaUsuario(us_nome);
+
+        }
+
+        public List<Usuario> ListaUsuario()
+        {
+            return usudao.listaUsuario();
+
+        }
+
+
+        #endregion
 
     }
 }

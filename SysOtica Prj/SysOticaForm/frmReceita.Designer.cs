@@ -31,6 +31,8 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.listBoxHistorico = new System.Windows.Forms.ListBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.dateTimePickerValidade = new System.Windows.Forms.DateTimePicker();
+            this.maskedTextData = new System.Windows.Forms.MaskedTextBox();
             this.txtPertoOEdnp = new System.Windows.Forms.TextBox();
             this.txtPertoODdnp = new System.Windows.Forms.TextBox();
             this.txtLongeOEdnp = new System.Windows.Forms.TextBox();
@@ -85,8 +87,6 @@
             this.btnSalvar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnImprimir = new System.Windows.Forms.Button();
-            this.maskedTextData = new System.Windows.Forms.MaskedTextBox();
-            this.dateTimePickerValidade = new System.Windows.Forms.DateTimePicker();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox13.SuspendLayout();
@@ -170,6 +170,22 @@
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Dados de Lançamento";
+            // 
+            // dateTimePickerValidade
+            // 
+            this.dateTimePickerValidade.Location = new System.Drawing.Point(314, 23);
+            this.dateTimePickerValidade.Name = "dateTimePickerValidade";
+            this.dateTimePickerValidade.Size = new System.Drawing.Size(256, 20);
+            this.dateTimePickerValidade.TabIndex = 43;
+            // 
+            // maskedTextData
+            // 
+            this.maskedTextData.Location = new System.Drawing.Point(95, 22);
+            this.maskedTextData.Mask = "00/00/0000";
+            this.maskedTextData.Name = "maskedTextData";
+            this.maskedTextData.Size = new System.Drawing.Size(100, 20);
+            this.maskedTextData.TabIndex = 42;
+            this.maskedTextData.ValidatingType = typeof(System.DateTime);
             // 
             // txtPertoOEdnp
             // 
@@ -615,6 +631,7 @@
             this.btnSalvar.TabIndex = 2;
             this.btnSalvar.Text = "Salvar";
             this.btnSalvar.UseVisualStyleBackColor = true;
+            this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click_1);
             // 
             // btnCancelar
             // 
@@ -624,6 +641,7 @@
             this.btnCancelar.TabIndex = 3;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click_1);
             // 
             // btnImprimir
             // 
@@ -633,22 +651,6 @@
             this.btnImprimir.TabIndex = 4;
             this.btnImprimir.Text = "Imprimir";
             this.btnImprimir.UseVisualStyleBackColor = true;
-            // 
-            // maskedTextData
-            // 
-            this.maskedTextData.Location = new System.Drawing.Point(95, 22);
-            this.maskedTextData.Mask = "00/00/0000";
-            this.maskedTextData.Name = "maskedTextData";
-            this.maskedTextData.Size = new System.Drawing.Size(100, 20);
-            this.maskedTextData.TabIndex = 42;
-            this.maskedTextData.ValidatingType = typeof(System.DateTime);
-            // 
-            // dateTimePickerValidade
-            // 
-            this.dateTimePickerValidade.Location = new System.Drawing.Point(314, 23);
-            this.dateTimePickerValidade.Name = "dateTimePickerValidade";
-            this.dateTimePickerValidade.Size = new System.Drawing.Size(256, 20);
-            this.dateTimePickerValidade.TabIndex = 43;
             // 
             // frmReceita
             // 

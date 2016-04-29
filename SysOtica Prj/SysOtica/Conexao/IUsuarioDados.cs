@@ -9,10 +9,11 @@ namespace SysOtica.Conexao
 {
     interface IUsuarioDados
     {
-        void Insert(Usuario usuario);
-        void update(Usuario usuario);
-        void delete(Usuario usuario);
-        bool verificaduplicidade(Usuario usuario);
-        List<Cliente> select(Usuario filtro);
+        void inserirUsuario(Usuario usu);
+        void alteraUsuario(Usuario usu);
+        void deleteUsuario(Usuario usu);
+        bool verificaduplicidade(Usuario usu);
+        List<Usuario> pesquisaUsuario(string us_nome);
+        List<Usuario> listaUsuario();
     }
 }

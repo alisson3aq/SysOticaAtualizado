@@ -1,4 +1,5 @@
 ﻿using SysOtica.Negocio.Classes_Basicas;
+using SysOtica.Negocio.Excecoes;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -9,214 +10,164 @@ using System.Threading.Tasks;
 
 namespace SysOtica.Conexao
 {
-    class UsuarioDados : ConexaoBD, IConexaoBD
+    class UsuarioDados : IUsuarioDados
     {
-        //public void Insert(Usuario usuario)
-        //{
-        //    try
-        //    {
-        //        //abrir a conexão
-        //        this.Conecta();
-        //        string sql = "INSERT INTO usuario us_senha, us_endereco, us_telefone, us_tipo, us_usuario, us_nome)";
-        //        //instrucao a ser executada
-        //        SqlCommand cmd = new SqlCommand(sql, this.sqlConn);
+        ConexaoBD conn = new ConexaoBD();
 
-        //        cmd.Parameters.Add("@us_senha", SqlDbType.VarChar);
-        //        cmd.Parameters["@us_senha"].Value = usuario.Us_senha;
+        public void inserirUsuario(Usuario usu)
+        {
 
-        //        cmd.Parameters.Add("@us_endereco", SqlDbType.VarChar);
-        //        cmd.Parameters["@us_endereco"].Value = usuario.Us_endereco;
+            string sql = "INSERT INTO Usuario VALUES ('" + usu.Us_senha + "','" + usu.Us_endereco + "','" + usu.Us_telefone + "','" + usu.Us_tipo + "','" + usu.Us_usuario + "','" + usu.Us_nome + "')";
 
-        //        cmd.Parameters.Add("@us_telefone", SqlDbType.VarChar);
-        //        cmd.Parameters["@us_telefone"].Value = usuario.Us_telefone;
+            try
+            {
+                conn.AbrirConexao();
+                SqlCommand cmd = new SqlCommand(sql, conn.cone);
+                cmd.ExecuteNonQuery();
+                conn.FecharConexao();
+            }
+            catch (SqlException e)
+            {
+                throw new BancoDeDadosException("Falha na comunicação com o banco de dados. \n" + e.Message);
+            }
 
-        //        cmd.Parameters.Add("@us_tipo", SqlDbType.VarChar);
-        //        cmd.Parameters["@us_tipo"].Value = usuario.Us_tipo;
 
-        //        cmd.Parameters.Add("@us_usuario", SqlDbType.VarChar);
-        //        cmd.Parameters["@us_usuario"].Value = usuario.Us_usuario;
+        }
 
-        //        cmd.Parameters.Add("@us_nome", SqlDbType.VarChar);
-        //        cmd.Parameters["@us_nome"].Value = usuario.Us_nome;
+        public void alteraUsuario(Usuario usu)
+        {
+            string sql = " UPDATE Usuario SET  us_senha= '" + usu.Us_senha + "', us_endereco = '" + usu.Us_endereco + "', us_telefone = '" + usu.Us_telefone + "', us_tipo = '" + usu.Us_tipo + "', us_usuario = '" + usu.Us_usuario + "', us_nome = '" + usu.Us_nome + "' WHERE us_id = " + (usu.Us_id) + "";
 
-        //        //executando a instrucao 
-        //        cmd.ExecuteNonQuery();
-        //        //liberando a memoria 
-        //        cmd.Dispose();
-        //        //fechando a conexao
-        //        this.Desconecta();
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        throw new Exception("Erro ao Conectar e inserir " + ex.Message);
-        //    }
-        //}
+            try
+            {
+                conn.AbrirConexao();
+                SqlCommand cmd = new SqlCommand(sql, conn.cone);
+                cmd.ExecuteNonQuery();
+                conn.FecharConexao();
+            }
+            catch (SqlException e)
+            {
+                throw new BancoDeDadosException("Falha na comunicação com o banco de dados. \n" + e.Message);
+            }
 
-        //public void update(Usuario usuario)
-        //{
-        //    try
-        //    {
-        //        //abrir a conexão
-        //        this.Conecta();
-        //        string sql = "UPDATE usuario SET (us_senha = @us_senha, us_endereco = @us_endereco, us_telefone = @us_telefone,us_tipo = @us_tipo, us_usuario = @us_usuario,us_nome = @us_nome) WHERE us_id = @us_id;";
-        //        //instrucao a ser executada
-        //        SqlCommand cmd = new SqlCommand(sql, this.sqlConn);
 
-        //        cmd.Parameters.Add("@us_id", SqlDbType.Int);
-        //        cmd.Parameters["@us_id"].Value = usuario.Us_id;
 
-        //        cmd.Parameters.Add("@us_senha", SqlDbType.VarChar);
-        //        cmd.Parameters["@us_senha"].Value = usuario.Us_senha;
+        }
 
-        //        cmd.Parameters.Add("@us_endereco", SqlDbType.VarChar);
-        //        cmd.Parameters["@us_endereco"].Value = usuario.Us_endereco;
+        public void deleteUsuario(Usuario usu)
+        {
+            string sql = "DELETE FROM Usuario WHERE us_id = " + (usu.Us_id) + "";
 
-        //        cmd.Parameters.Add("@us_telefone", SqlDbType.VarChar);
-        //        cmd.Parameters["@us_telefone"].Value = usuario.Us_telefone;
+            try
+            {
+                conn.AbrirConexao();
+                SqlCommand cmd = new SqlCommand(sql, conn.cone);
+                cmd.ExecuteNonQuery();
+                conn.FecharConexao();
+            }
+            catch (SqlException e)
+            {
+                throw new BancoDeDadosException("Falha na comunicação com o banco de dados. \n" + e.Message);
+            }
 
-        //        cmd.Parameters.Add("@us_tipo", SqlDbType.VarChar);
-        //        cmd.Parameters["@us_tipo"].Value = usuario.Us_tipo;
 
-        //        cmd.Parameters.Add("@us_usuario", SqlDbType.VarChar);
-        //        cmd.Parameters["@us_usuario"].Value = usuario.Us_usuario;
+        }
 
-        //        cmd.Parameters.Add("@us_nome", SqlDbType.VarChar);
-        //        cmd.Parameters["@us_nome"].Value = usuario.Us_nome;
 
-        //        //executando a instrucao 
-        //        cmd.ExecuteNonQuery();
-        //        //liberando a memoria 
-        //        cmd.Dispose();
-        //        //fechando a conexao
-        //        this.Desconecta();
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        throw new Exception("erro ao conectar e atualizar " + ex.Message);
-        //    }
-        //}
 
-        //public void delete(Usuario usuario)
-        //{
-        //    try
-        //    {
-        //        //abrir a conexão
-        //        this.Conecta();
-        //        string sql = "DELETE FROM usuario WHERE us_id = @us_id";
-        //        //instrucao a ser executada
-        //        SqlCommand cmd = new SqlCommand(sql, this.sqlConn);
-        //        cmd.Parameters.Add("@cl_id", SqlDbType.Int);
-        //        cmd.Parameters["@cl_id"].Value = usuario.Us_id;
-        //        //executando a instrucao 
-        //        cmd.ExecuteNonQuery();
-        //        //liberando a memoria 
-        //        cmd.Dispose();
-        //        //fechando a conexao
-        //        this.Desconecta();
-        //    }
-        //    catch (Exception
-        //        ex)
-        //    {
-        //        throw new Exception("erro ao conectar e remover " + ex.Message);
-        //    }
-        //}
+        public List<Usuario> listaUsuario()
+        {
+            string sql = "SELECT  us_id, us_usuario, us_senha, us_nome,  us_tipo, us_endereco , us_telefone FROM Usuario";
+            List<Usuario> lista = new List<Usuario>();
+            Usuario usu;
 
-        //public bool verificaduplicidade(Usuario usuario)
-        //{
-        //    bool retorno = false;
-        //    try
-        //    {
-        //        this.Conecta();
-        //        //instrucao a ser executada
-        //        string sql = "select * from usuario where us_id = @us_id";
-        //        SqlCommand cmd = new SqlCommand(sql, sqlConn);
-        //        cmd.Parameters.Add("@us_id", SqlDbType.Int);
-        //        cmd.Parameters["@us_id"].Value = usuario.Us_id;
-        //        //executando a instrucao e colocando o resultado em um leitor
-        //        SqlDataReader dbreader = cmd.ExecuteReader();
-        //        //lendo o resultado da consulta
-        //        while (dbreader.Read())
-        //        {
-        //            retorno = true;
-        //            break;
-        //        }
-        //        //fechando o leitor de resultados
-        //        dbreader.Close();
-        //        //liberando a memoria 
-        //        cmd.Dispose();
-        //        //fechando a conexao
-        //        this.Desconecta();
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        throw new Exception("erro ao conectar e selecionar " + ex.Message);
-        //    }
-        //    return retorno;
-        //}
 
-        //public List<Usuario> select(Usuario filtro)
-        //{
-        //    List<Usuario> retorno = new List<Usuario>();
-        //    try
-        //    {
-        //        this.Conecta();
-        //        //instrucao a ser executada
-        //        string sql = "select * from usuario where us_id = @us_id";
-        //        //se foi passada uma matricula válida, esta matricula entrará como critério de filtro
-        //        if (filtro.Us_id > 0)
-        //        {
-        //            sql += " and  us_id = @us_id";
-        //        }
-        //        //se foi passada um nome de usuario válido, este nome de usuario entrará como critério de filtro
-        //        if (filtro.Us_usuario != null && filtro.Us_usuario.Trim().Equals("") == false)
-        //        {
-        //            sql += " and nome like '%@Us_usuario%'";
-        //        }
-        //        SqlCommand cmd = new SqlCommand(sql, sqlConn);
+            try
+            {
+                conn.AbrirConexao();
+                SqlCommand cmd = new SqlCommand(sql, conn.cone);
+                SqlDataReader retorno = cmd.ExecuteReader();
 
-        //        //se foi passada uma matricula válida, esta matricula entrará como critério de filtro
-        //        if (filtro.Us_id > 0)
-        //        {
-        //            cmd.Parameters.Add("@us_id", SqlDbType.Int);
-        //            cmd.Parameters["@us_id"].Value = filtro.Us_id;
-        //        }
-        //        //se foi passada um nome válido, este nome entrará como critério de filtro
-        //        if (filtro.Us_usuario != null && filtro.Us_usuario.Trim().Equals("") == false)
-        //        {
-        //            cmd.Parameters.Add("@usuario", SqlDbType.VarChar);
-        //            cmd.Parameters["@usuario"].Value = filtro.Us_usuario;
+                while (retorno.Read())
+                {
+                    usu = new Usuario();
 
-        //        }
-        //        //executando a instrucao e colocando o resultado em um leitor
-        //        SqlDataReader dbreader = cmd.ExecuteReader();
-        //        //lendo o resultado da consulta
-        //        while (dbreader.Read())
-        //        {
-        //            Usuario usuario = new Usuario();
-        //            //acessando os valores das colunas do resultado
+                    usu.Us_id = retorno.GetInt32(retorno.GetOrdinal("us_id"));
+                    usu.Us_usuario = retorno.GetString(retorno.GetOrdinal("us_usuario"));
+                    usu.Us_senha = retorno.GetString(retorno.GetOrdinal("us_senha"));
+                    usu.Us_nome = retorno.GetString(retorno.GetOrdinal("us_nome"));
+                    usu.Us_tipo = retorno.GetString(retorno.GetOrdinal("us_tipo"));
+                    usu.Us_endereco = retorno.GetString(retorno.GetOrdinal("us_endereco"));
+                    usu.Us_telefone = retorno.GetString(retorno.GetOrdinal("us_telefone"));
+                    
+                    
 
-        //            usuario.Us_id = dbreader.GetInt32(dbreader.GetOrdinal("@us_id"));
-        //            usuario.Us_senha = dbreader.GetString(dbreader.GetOrdinal("@us_senha"));
-        //            usuario.Us_endereco = dbreader.GetString(dbreader.GetOrdinal("@us_endereco"));
-        //            usuario.Us_telefone = dbreader.GetString(dbreader.GetOrdinal("@us_telefone"));
-        //            usuario.Us_tipo = dbreader.GetString(dbreader.GetOrdinal("@us_tipo"));
-        //            usuario.Us_usuario = dbreader.GetString(dbreader.GetOrdinal("@us_usuario"));
-        //            usuario.Us_nome = dbreader.GetString(dbreader.GetOrdinal("@us_nome"));
-                
-        //            retorno.Add(usuario);
-        //        }
-        //        //fechando o leitor de resultados
-        //        dbreader.Close();
-        //        //liberando a memoria 
-        //        cmd.Dispose();
-        //        //fechando a conexao
-        //        this.Desconecta();
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        throw new Exception("erro ao conectar e selecionar " + ex.Message);
-        //    }
-        //    return retorno;
-        //}
+                    lista.Add(usu);
+                }
+                conn.FecharConexao();
+                return lista;
+
+            }
+            catch (SqlException e)
+            {
+                throw new BancoDeDadosException("Falha na comunicação com o banco de dados. \n" + e.Message);
+            }
+
+        }
+
+
+ 
+        public bool verificaduplicidade(Usuario usu)
+        {
+            throw new NotImplementedException();
+        }
+
+        public List<Usuario> pesquisaUsuario(string us_nome)
+        {
+            string sql = "SELECT  us_id, us_usuario, us_senha, us_nome,  us_tipo, us_endereco , us_telefone FROM Usuario";
+            if (us_nome != "")
+            {
+                sql += "WHERE us_nome LIKE @us_nome";
+            }
+            List<Usuario> lista = new List<Usuario>();
+            Usuario usu = new Usuario();
+
+            try
+            {
+                conn.AbrirConexao();
+                SqlCommand cmd = new SqlCommand(sql, conn.cone);
+                if (us_nome != "")
+                {
+                    cmd.Parameters.AddWithValue("@us_nome", "%" + us_nome + "%");
+                }
+                SqlDataReader retorno = cmd.ExecuteReader();
+                while (retorno.Read())
+                {
+                    usu = new Usuario();
+
+                    usu.Us_id = retorno.GetInt32(retorno.GetOrdinal("us_id"));
+                    usu.Us_usuario = retorno.GetString(retorno.GetOrdinal("us_usuario"));
+                    usu.Us_senha = retorno.GetString(retorno.GetOrdinal("us_senha"));
+                    usu.Us_nome = retorno.GetString(retorno.GetOrdinal("us_nome"));
+                    usu.Us_tipo = retorno.GetString(retorno.GetOrdinal("us_tipo"));
+                    usu.Us_endereco = retorno.GetString(retorno.GetOrdinal("us_endereco"));
+                    usu.Us_telefone = retorno.GetString(retorno.GetOrdinal("us_telefone"));
+
+
+                    lista.Add(usu);
+                }
+
+                conn.FecharConexao();
+                return lista;
+
+            }
+            catch (SqlException e)
+            {
+                throw new BancoDeDadosException("Falha na comunicação com o banco de dados. \n" + e.Message);
+            }
+
+        }
+
+            
     }
 }

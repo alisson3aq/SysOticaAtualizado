@@ -30,9 +30,7 @@ namespace SysOticaForm
         }
 
       
-
   
-
         private void btnListar_Click(object sender, EventArgs e)
         {
             atualizaGrid();
@@ -40,6 +38,7 @@ namespace SysOticaForm
 
         void atualizaGrid()
         {
+            dataGridProduto.AutoGenerateColumns = false;
             dataGridProduto.DataSource = null;
             listarProduto = fachada.ListaProduto();
             dataGridProduto.DataSource = listarProduto;
@@ -48,9 +47,7 @@ namespace SysOticaForm
 
         }
 
-
-
-      
+   
 
         private void btnAlterar_Click(object sender, EventArgs e)
         {
@@ -61,7 +58,7 @@ namespace SysOticaForm
                     MessageBox.Show("Selecione uma linha para alterar!");
                     return;
                 }
-                DialogResult resultado = MessageBox.Show("Deseja realmente alterar esse Cliente? ", "Pergunta", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                DialogResult resultado = MessageBox.Show("Deseja realmente alterar esse Produto? ", "Pergunta", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (resultado == DialogResult.No)
                 {
                     return;
@@ -99,7 +96,7 @@ namespace SysOticaForm
                     return;
                 }
 
-                DialogResult resultado = MessageBox.Show("Tem certeza que deseja excluir esse Cliente?", "Pergunta", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                DialogResult resultado = MessageBox.Show("Tem certeza que deseja excluir esse Produto?", "Pergunta", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
                 if (resultado == DialogResult.No)
                 {
@@ -108,7 +105,7 @@ namespace SysOticaForm
                 else
                 {
                     fachada.excluirProduto(listarProduto.ElementAt(dataGridProduto.SelectedRows[0].Index));
-                    MessageBox.Show("Funcionário excluído com sucesso!");
+                    MessageBox.Show("Produto excluído com sucesso!");
                     atualizaGrid();
                 }
             }

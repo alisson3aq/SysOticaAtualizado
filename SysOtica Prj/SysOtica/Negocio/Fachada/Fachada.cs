@@ -133,5 +133,51 @@ namespace SysOtica.Negocio.Fachada
         #endregion
 
 
+        #region Receita
+
+        ReceitaDados receitadao = new ReceitaDados();
+        ReceitaControlador receitaColtrol = new ReceitaControlador();
+
+        public void InserirReceita(Receita receita)
+        {
+            receitaColtrol.VerificaPreenchimento(receita);
+            receitadao.inserirReceita(receita);
+
+        }
+
+        public void AlterarReceita(Receita receita)
+        {
+
+            receitaColtrol.VerificaPreenchimento(receita);
+            receitadao.alterarReceita(receita);
+        }
+
+
+        public void ExcluirReceita(Receita receita)
+        {
+            receitadao.excluirreceita(receita);
+
+        }
+
+        public List<Receita> PesquisaReceita(string rc_nomemedico)
+        {
+            return receitadao.pesquisaReceita(rc_nomemedico);
+
+        }
+
+        public List<Receita> ListaReceita()
+        {
+            return receitadao.listaReceita();
+
+        }
+
+
+
+
+
+
+        #endregion 
+
+
     }
 }

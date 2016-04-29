@@ -70,7 +70,7 @@
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(632, 349);
+            this.groupBox1.Size = new System.Drawing.Size(527, 349);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             // 
@@ -175,7 +175,7 @@
             // 
             // buttonSair
             // 
-            this.buttonSair.Location = new System.Drawing.Point(533, 284);
+            this.buttonSair.Location = new System.Drawing.Point(389, 284);
             this.buttonSair.Name = "buttonSair";
             this.buttonSair.Size = new System.Drawing.Size(75, 23);
             this.buttonSair.TabIndex = 11;
@@ -224,8 +224,9 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(656, 373);
+            this.ClientSize = new System.Drawing.Size(555, 373);
             this.Controls.Add(this.groupBox1);
+            this.MaximizeBox = false;
             this.Name = "formProdutoAlterar";
             this.Text = "formProdutoAlterar";
             this.Load += new System.EventHandler(this.formProdutoAlterar_Load);

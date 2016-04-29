@@ -144,6 +144,12 @@
     <Compile Include="frmReceita.Designer.cs">
       <DependentUpon>frmReceita.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmReceitaAlterar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmReceitaAlterar.Designer.cs">
+      <DependentUpon>frmReceitaAlterar.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmUsuario.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -214,6 +220,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmReceita.resx">
       <DependentUpon>frmReceita.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmReceitaAlterar.resx">
+      <DependentUpon>frmReceitaAlterar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmUsuario.resx">
       <DependentUpon>frmUsuario.cs</DependentUpon>

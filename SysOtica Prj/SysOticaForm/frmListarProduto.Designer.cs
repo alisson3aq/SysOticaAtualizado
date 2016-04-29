@@ -29,13 +29,6 @@
         private void InitializeComponent()
         {
             this.dataGridProduto = new System.Windows.Forms.DataGridView();
-            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.descricao = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.grife = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.valor = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.estoqueminimo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.categoria = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.qtd = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.textPesquisa = new System.Windows.Forms.TextBox();
             this.btnAlterar = new System.Windows.Forms.Button();
             this.btnExcluir = new System.Windows.Forms.Button();
@@ -43,6 +36,13 @@
             this.btnPesquisar = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.btnSair = new System.Windows.Forms.Button();
+            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.descricao = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.grife = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.valor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.estoqueminimo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.categoria = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.qtd = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridProduto)).BeginInit();
             this.SuspendLayout();
             // 
@@ -60,60 +60,10 @@
             this.dataGridProduto.Location = new System.Drawing.Point(12, 53);
             this.dataGridProduto.MultiSelect = false;
             this.dataGridProduto.Name = "dataGridProduto";
-            this.dataGridProduto.ReadOnly = true;
             this.dataGridProduto.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridProduto.Size = new System.Drawing.Size(744, 202);
             this.dataGridProduto.TabIndex = 0;
             this.dataGridProduto.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridProduto_CellDoubleClick);
-            // 
-            // ID
-            // 
-            this.ID.DataPropertyName = "pr_id";
-            this.ID.HeaderText = "ID";
-            this.ID.Name = "ID";
-            this.ID.ReadOnly = true;
-            // 
-            // descricao
-            // 
-            this.descricao.DataPropertyName = "pr_descricao";
-            this.descricao.HeaderText = "Descrição";
-            this.descricao.Name = "descricao";
-            this.descricao.ReadOnly = true;
-            // 
-            // grife
-            // 
-            this.grife.DataPropertyName = "pr_grife";
-            this.grife.HeaderText = "Grife";
-            this.grife.Name = "grife";
-            this.grife.ReadOnly = true;
-            // 
-            // valor
-            // 
-            this.valor.DataPropertyName = "pr_valor";
-            this.valor.HeaderText = "Valor";
-            this.valor.Name = "valor";
-            this.valor.ReadOnly = true;
-            // 
-            // estoqueminimo
-            // 
-            this.estoqueminimo.DataPropertyName = "pr_estoqueminimo";
-            this.estoqueminimo.HeaderText = "Estoque Minimo";
-            this.estoqueminimo.Name = "estoqueminimo";
-            this.estoqueminimo.ReadOnly = true;
-            // 
-            // categoria
-            // 
-            this.categoria.DataPropertyName = "pr_categoria";
-            this.categoria.HeaderText = "Categoria";
-            this.categoria.Name = "categoria";
-            this.categoria.ReadOnly = true;
-            // 
-            // qtd
-            // 
-            this.qtd.DataPropertyName = "pq_qtd";
-            this.qtd.HeaderText = "Quantidade";
-            this.qtd.Name = "qtd";
-            this.qtd.ReadOnly = true;
             // 
             // textPesquisa
             // 
@@ -182,6 +132,48 @@
             this.btnSair.UseVisualStyleBackColor = true;
             this.btnSair.Click += new System.EventHandler(this.btnSair_Click);
             // 
+            // ID
+            // 
+            this.ID.DataPropertyName = "pr_id";
+            this.ID.HeaderText = "ID";
+            this.ID.Name = "ID";
+            // 
+            // descricao
+            // 
+            this.descricao.DataPropertyName = "pr_descricao";
+            this.descricao.HeaderText = "Descrição";
+            this.descricao.Name = "descricao";
+            // 
+            // grife
+            // 
+            this.grife.DataPropertyName = "pr_grife";
+            this.grife.HeaderText = "Grife";
+            this.grife.Name = "grife";
+            // 
+            // valor
+            // 
+            this.valor.DataPropertyName = "pr_valor";
+            this.valor.HeaderText = "Valor";
+            this.valor.Name = "valor";
+            // 
+            // estoqueminimo
+            // 
+            this.estoqueminimo.DataPropertyName = "pr_estoqueminimo";
+            this.estoqueminimo.HeaderText = "Estoque Minimo";
+            this.estoqueminimo.Name = "estoqueminimo";
+            // 
+            // categoria
+            // 
+            this.categoria.DataPropertyName = "pr_categoria";
+            this.categoria.HeaderText = "Categoria";
+            this.categoria.Name = "categoria";
+            // 
+            // qtd
+            // 
+            this.qtd.DataPropertyName = "pr_qtd";
+            this.qtd.HeaderText = "Quantidade";
+            this.qtd.Name = "qtd";
+            // 
             // frmListarProduto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -195,10 +187,10 @@
             this.Controls.Add(this.btnAlterar);
             this.Controls.Add(this.textPesquisa);
             this.Controls.Add(this.dataGridProduto);
+            this.MaximizeBox = false;
             this.Name = "frmListarProduto";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Listar/Alterar Produto";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             ((System.ComponentModel.ISupportInitialize)(this.dataGridProduto)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -208,13 +200,6 @@
         #endregion
 
         private System.Windows.Forms.DataGridView dataGridProduto;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn descricao;
-        private System.Windows.Forms.DataGridViewTextBoxColumn grife;
-        private System.Windows.Forms.DataGridViewTextBoxColumn valor;
-        private System.Windows.Forms.DataGridViewTextBoxColumn estoqueminimo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn categoria;
-        private System.Windows.Forms.DataGridViewTextBoxColumn qtd;
         private System.Windows.Forms.TextBox textPesquisa;
         private System.Windows.Forms.Button btnAlterar;
         private System.Windows.Forms.Button btnExcluir;
@@ -222,5 +207,12 @@
         private System.Windows.Forms.Button btnPesquisar;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnSair;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn descricao;
+        private System.Windows.Forms.DataGridViewTextBoxColumn grife;
+        private System.Windows.Forms.DataGridViewTextBoxColumn valor;
+        private System.Windows.Forms.DataGridViewTextBoxColumn estoqueminimo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn categoria;
+        private System.Windows.Forms.DataGridViewTextBoxColumn qtd;
     }
 }

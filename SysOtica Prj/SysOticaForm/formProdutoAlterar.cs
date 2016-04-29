@@ -43,6 +43,9 @@ namespace SysOticaForm
             if (alteraProduto != null)
 
             {
+
+                 
+
                 textID.Text = Convert.ToString(alteraProduto.Pr_id);
                 tbDescricao.Text = alteraProduto.Pr_descricao;
                 //cbUnidade.Text = alteraProduto.Pr_unidade;               

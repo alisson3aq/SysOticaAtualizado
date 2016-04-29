@@ -461,6 +461,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(707, 453);
             this.Controls.Add(this.groupBox1);
+            this.MaximizeBox = false;
             this.Name = "frmFornecedorAlterar";
             this.Text = "FrmFornecedorAlterar";
             this.groupBox1.ResumeLayout(false);

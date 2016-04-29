@@ -10,27 +10,27 @@ namespace SysOtica.Negocio.Classes_Basicas
     {
         private int rc_id;
         private DateTime rc_historico;
-        private double rc_lodesferico;
-        private double rc_loeesferico;
-        private double rc_podesferico;
-        private double rc_poeesferico;
-        private double rc_lodcilindrico;
-        private double rc_loecilindrico;
-        private double rc_podcilindrico;
-        private double rc_poecilindrico;
-        private double rc_lodeixo;
-        private double rc_loeeixo;
-        private double rc_podeixo;
-        private double rc_poeeixo;
-        private double rc_lodaltura;
-        private double rc_loealtura;
-        private double rc_podaltura;
-        private double rc_poealtura;
-        private double rc_loddnp;
-        private double rc_loednp;
-        private double rc_poddnp;
-        private double rc_poednp;
-        private double rc_adicao;
+        private decimal rc_lodesferico;
+        private decimal rc_loeesferico;
+        private decimal rc_podesferico;
+        private decimal rc_poeesferico;
+        private decimal rc_lodcilindrico;
+        private decimal rc_loecilindrico;
+        private decimal rc_podcilindrico;
+        private decimal rc_poecilindrico;
+        private decimal rc_lodeixo;
+        private decimal rc_loeeixo;
+        private decimal rc_podeixo;
+        private decimal rc_poeeixo;
+        private decimal rc_lodaltura;
+        private decimal rc_loealtura;
+        private decimal rc_podaltura;
+        private decimal rc_poealtura;
+        private decimal rc_loddnp;
+        private decimal rc_loednp;
+        private decimal rc_poddnp;
+        private decimal rc_poednp;
+        private decimal rc_adicao;
         private String rc_nomemedico;
         private String rc_observacoes;
         private DateTime rc_data;
@@ -39,35 +39,35 @@ namespace SysOtica.Negocio.Classes_Basicas
         private List<Venda> vn_id;
 
 
-        public Receita(int rc_id, DateTime rc_historico, double rc_lodesferico, double rc_loeesferico, double rc_podesferico, double rc_poeesferico, double rc_lodcilindrico, double rc_loecilindrico, double rc_podcilindrico, double rc_poecilindrico, double rc_lodeixo, double rc_loeeixo, double rc_podeixo, double rc_poeeixo, double rc_lodaltura, double rc_loealtura, double rc_podaltura, double rc_poealtura, double rc_loddnp, double rc_loednp, double rc_poddnp, double rc_poednp, double rc_adicao, String rc_nomemedico, string rc_observacoes, DateTime rc_data, DateTime rc_dtavalidade, List<Cliente> cl_id, List<Venda> vn_id)
+        public Receita(int rc_id, DateTime rc_historico, decimal rc_lodesferico, decimal rc_loeesferico, decimal rc_podesferico, decimal rc_poeesferico, decimal rc_lodcilindrico, decimal rc_loecilindrico, decimal rc_podcilindrico, decimal rc_poecilindrico, decimal rc_lodeixo, decimal rc_loeeixo, decimal rc_podeixo, decimal rc_poeeixo, decimal rc_lodaltura, decimal rc_loealtura, decimal rc_podaltura, decimal rc_poealtura, decimal rc_loddnp, decimal rc_loednp, decimal rc_poddnp, decimal rc_poednp, decimal rc_adicao, String rc_nomemedico, string rc_observacoes, DateTime rc_data, DateTime rc_dtavalidade, List<Cliente> cl_id, List<Venda> vn_id)
         {
-            this.Rc_id = rc_id;
-            this.Rc_historico = rc_historico;
-            this.Rc_lodesferico = rc_lodesferico;
-            this.Rc_loeesferico = rc_loeesferico;
-            this.Rc_podesferico = rc_podesferico;
-            this.Rc_poeesferico = rc_poeesferico;
-            this.Rc_lodcilindrico = rc_lodcilindrico;
-            this.Rc_loecilindrico = rc_loecilindrico;
-            this.Rc_podcilindrico = rc_podcilindrico;
-            this.Rc_poecilindrico = rc_poecilindrico;
-            this.Rc_lodeixo = rc_lodeixo;
-            this.Rc_loeeixo = rc_loeeixo;
-            this.Rc_podeixo = rc_podeixo;
-            this.Rc_poeeixo = rc_poeeixo;
-            this.Rc_lodaltura = rc_lodaltura;
-            this.Rc_loealtura = rc_loealtura;
-            this.Rc_podaltura = rc_podaltura;
-            this.Rc_poealtura = rc_poealtura;
-            this.Rc_loddnp = rc_loddnp;
-            this.Rc_loednp = rc_loednp;
-            this.Rc_poddnp = rc_poddnp;
-            this.Rc_poednp = rc_poednp;
-            this.Rc_adicao = rc_adicao;
-            this.Rc_nomemedico = rc_nomemedico;
-            this.Rc_observacoes = rc_observacoes;
-            this.Rc_data = rc_data;
-            this.Rc_dtavalidade = rc_dtavalidade;
+            this.rc_id = rc_id;
+            this.rc_historico = rc_historico;
+            this.rc_lodesferico = rc_lodesferico;
+            this.rc_loeesferico = rc_loeesferico;
+            this.rc_podesferico = rc_podesferico;
+            this.rc_poeesferico = rc_poeesferico;
+            this.rc_lodcilindrico = rc_lodcilindrico;
+            this.rc_loecilindrico = rc_loecilindrico;
+            this.rc_podcilindrico = rc_podcilindrico;
+            this.rc_poecilindrico = rc_poecilindrico;
+            this.rc_lodeixo = rc_lodeixo;
+            this.rc_loeeixo = rc_loeeixo;
+            this.rc_podeixo = rc_podeixo;
+            this.rc_poeeixo = rc_poeeixo;
+            this.rc_lodaltura = rc_lodaltura;
+            this.rc_loealtura = rc_loealtura;
+            this.rc_podaltura = rc_podaltura;
+            this.rc_poealtura = rc_poealtura;
+            this.rc_loddnp = rc_loddnp;
+            this.rc_loednp = rc_loednp;
+            this.rc_poddnp = rc_poddnp;
+            this.rc_poednp = rc_poednp;
+            this.rc_adicao = rc_adicao;
+            this.rc_nomemedico = rc_nomemedico;
+            this.rc_observacoes = rc_observacoes;
+            this.rc_data = rc_data;
+            this.rc_dtavalidade = rc_dtavalidade;
             this.Cl_id = new List<Cliente>();
             this.Vn_id = new List<Venda>();
         }
@@ -102,7 +102,7 @@ namespace SysOtica.Negocio.Classes_Basicas
             }
         }
 
-        public double Rc_lodesferico
+        public decimal Rc_lodesferico
         {
             get
             {
@@ -115,7 +115,7 @@ namespace SysOtica.Negocio.Classes_Basicas
             }
         }
 
-        public double Rc_loeesferico
+        public decimal Rc_loeesferico
         {
             get
             {
@@ -128,7 +128,7 @@ namespace SysOtica.Negocio.Classes_Basicas
             }
         }
 
-        public double Rc_podesferico
+        public decimal Rc_podesferico
         {
             get
             {
@@ -141,7 +141,7 @@ namespace SysOtica.Negocio.Classes_Basicas
             }
         }
 
-        public double Rc_poeesferico
+        public decimal Rc_poeesferico
         {
             get
             {
@@ -154,7 +154,7 @@ namespace SysOtica.Negocio.Classes_Basicas
             }
         }
 
-        public double Rc_lodcilindrico
+        public decimal Rc_lodcilindrico
         {
             get
             {
@@ -167,7 +167,7 @@ namespace SysOtica.Negocio.Classes_Basicas
             }
         }
 
-        public double Rc_loecilindrico
+        public decimal Rc_loecilindrico
         {
             get
             {
@@ -180,7 +180,7 @@ namespace SysOtica.Negocio.Classes_Basicas
             }
         }
 
-        public double Rc_podcilindrico
+        public decimal Rc_podcilindrico
         {
             get
             {
@@ -193,7 +193,7 @@ namespace SysOtica.Negocio.Classes_Basicas
             }
         }
 
-        public double Rc_poecilindrico
+        public decimal Rc_poecilindrico
         {
             get
             {
@@ -206,7 +206,7 @@ namespace SysOtica.Negocio.Classes_Basicas
             }
         }
 
-        public double Rc_lodeixo
+        public decimal Rc_lodeixo
         {
             get
             {
@@ -219,7 +219,7 @@ namespace SysOtica.Negocio.Classes_Basicas
             }
         }
 
-        public double Rc_loeeixo
+        public decimal Rc_loeeixo
         {
             get
             {
@@ -232,7 +232,7 @@ namespace SysOtica.Negocio.Classes_Basicas
             }
         }
 
-        public double Rc_podeixo
+        public decimal Rc_podeixo
         {
             get
             {
@@ -245,7 +245,7 @@ namespace SysOtica.Negocio.Classes_Basicas
             }
         }
 
-        public double Rc_poeeixo
+        public decimal Rc_poeeixo
         {
             get
             {
@@ -258,7 +258,7 @@ namespace SysOtica.Negocio.Classes_Basicas
             }
         }
 
-        public double Rc_lodaltura
+        public decimal Rc_lodaltura
         {
             get
             {
@@ -271,7 +271,7 @@ namespace SysOtica.Negocio.Classes_Basicas
             }
         }
 
-        public double Rc_loealtura
+        public decimal Rc_loealtura
         {
             get
             {
@@ -284,7 +284,7 @@ namespace SysOtica.Negocio.Classes_Basicas
             }
         }
 
-        public double Rc_podaltura
+        public decimal Rc_podaltura
         {
             get
             {
@@ -297,7 +297,7 @@ namespace SysOtica.Negocio.Classes_Basicas
             }
         }
 
-        public double Rc_poealtura
+        public decimal Rc_poealtura
         {
             get
             {
@@ -310,7 +310,7 @@ namespace SysOtica.Negocio.Classes_Basicas
             }
         }
 
-        public double Rc_loddnp
+        public decimal Rc_loddnp
         {
             get
             {
@@ -323,7 +323,7 @@ namespace SysOtica.Negocio.Classes_Basicas
             }
         }
 
-        public double Rc_loednp
+        public decimal Rc_loednp
         {
             get
             {
@@ -336,7 +336,7 @@ namespace SysOtica.Negocio.Classes_Basicas
             }
         }
 
-        public double Rc_poddnp
+        public decimal Rc_poddnp
         {
             get
             {
@@ -349,7 +349,7 @@ namespace SysOtica.Negocio.Classes_Basicas
             }
         }
 
-        public double Rc_poednp
+        public decimal Rc_poednp
         {
             get
             {
@@ -362,7 +362,7 @@ namespace SysOtica.Negocio.Classes_Basicas
             }
         }
 
-        public double Rc_adicao
+        public decimal Rc_adicao
         {
             get
             {

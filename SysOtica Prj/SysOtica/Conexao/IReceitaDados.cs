@@ -9,10 +9,11 @@ namespace SysOtica.Conexao
 {
     interface IReceitaDados
     {
-        void Insert(Receita receita);
-        void update(Receita receita);
-        void delete(Receita receita);
+        void inserirReceita(Receita receita);
+        void alterarReceita(Receita receita);
+        void excluirreceita(Receita receita);
         bool verificaduplicidade(Receita receita);
-        List<Receita> select(Receita filtro);
+        List<Receita> listaReceita();
+        List<Receita> pesquisaReceita(string rc_nomemedico);
     }
 }

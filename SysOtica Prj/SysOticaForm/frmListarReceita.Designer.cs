@@ -28,490 +28,367 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmListarReceita));
-            this.sysOticaDataSet = new SysOticaForm.SysOticaDataSet();
-            this.receitaBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.receitaTableAdapter = new SysOticaForm.SysOticaDataSetTableAdapters.receitaTableAdapter();
-            this.tableAdapterManager = new SysOticaForm.SysOticaDataSetTableAdapters.TableAdapterManager();
-            this.receitaBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
-            this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorSeparator = new System.Windows.Forms.ToolStripSeparator();
-            this.bindingNavigatorPositionItem = new System.Windows.Forms.ToolStripTextBox();
-            this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
-            this.bindingNavigatorSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
-            this.receitaBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
-            this.receitaDataGridView = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn15 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn16 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn17 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn18 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn19 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn20 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn21 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn22 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn23 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn24 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn25 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn26 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn27 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn28 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn29 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.sysOticaDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.receitaBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.receitaBindingNavigator)).BeginInit();
-            this.receitaBindingNavigator.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.receitaDataGridView)).BeginInit();
+            this.DataGridreceita = new System.Windows.Forms.DataGridView();
+            this.txtPesquisa = new System.Windows.Forms.TextBox();
+            this.btnAlterar = new System.Windows.Forms.Button();
+            this.btnExcluir = new System.Windows.Forms.Button();
+            this.btnSair = new System.Windows.Forms.Button();
+            this.btnListar = new System.Windows.Forms.Button();
+            this.btnPesquisar = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.historico = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lodesferico = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.eesferico = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.podesferico = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.poeesferico = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lodcilindrico = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.loecilindrico = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.podcilindrico = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.poecilindirco = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lodeixo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.loeeixo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.podeixo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.poeeixo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lodaltura = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.loealtura = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.podaltura = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.poealtura = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.loddnp = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.loednp = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.poddnp = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.poednp = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.adicao = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.obs = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nomemedico = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.data = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dtvalidade = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            ((System.ComponentModel.ISupportInitialize)(this.DataGridreceita)).BeginInit();
             this.SuspendLayout();
             // 
-            // sysOticaDataSet
-            // 
-            this.sysOticaDataSet.DataSetName = "SysOticaDataSet";
-            this.sysOticaDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // receitaBindingSource
-            // 
-            this.receitaBindingSource.DataMember = "receita";
-            this.receitaBindingSource.DataSource = this.sysOticaDataSet;
-            // 
-            // receitaTableAdapter
-            // 
-            this.receitaTableAdapter.ClearBeforeFill = true;
-            // 
-            // tableAdapterManager
-            // 
-            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
-            this.tableAdapterManager.categoriaTableAdapter = null;
-            this.tableAdapterManager.clienteTableAdapter = null;
-            this.tableAdapterManager.fornecedorTableAdapter = null;
-            this.tableAdapterManager.produtofornecedorTableAdapter = null;
-            this.tableAdapterManager.produtoTableAdapter = null;
-            this.tableAdapterManager.produtovendaTableAdapter = null;
-            this.tableAdapterManager.receitaTableAdapter = this.receitaTableAdapter;
-            this.tableAdapterManager.UpdateOrder = SysOticaForm.SysOticaDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
-            this.tableAdapterManager.usuarioTableAdapter = null;
-            this.tableAdapterManager.vendaTableAdapter = null;
-            // 
-            // receitaBindingNavigator
-            // 
-            this.receitaBindingNavigator.AddNewItem = null;
-            this.receitaBindingNavigator.BindingSource = this.receitaBindingSource;
-            this.receitaBindingNavigator.CountItem = this.bindingNavigatorCountItem;
-            this.receitaBindingNavigator.DeleteItem = this.bindingNavigatorDeleteItem;
-            this.receitaBindingNavigator.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.bindingNavigatorMoveFirstItem,
-            this.bindingNavigatorMovePreviousItem,
-            this.bindingNavigatorSeparator,
-            this.bindingNavigatorPositionItem,
-            this.bindingNavigatorCountItem,
-            this.bindingNavigatorSeparator1,
-            this.bindingNavigatorMoveNextItem,
-            this.bindingNavigatorMoveLastItem,
-            this.bindingNavigatorSeparator2,
-            this.bindingNavigatorDeleteItem,
-            this.receitaBindingNavigatorSaveItem});
-            this.receitaBindingNavigator.Location = new System.Drawing.Point(0, 0);
-            this.receitaBindingNavigator.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
-            this.receitaBindingNavigator.MoveLastItem = this.bindingNavigatorMoveLastItem;
-            this.receitaBindingNavigator.MoveNextItem = this.bindingNavigatorMoveNextItem;
-            this.receitaBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
-            this.receitaBindingNavigator.Name = "receitaBindingNavigator";
-            this.receitaBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
-            this.receitaBindingNavigator.Size = new System.Drawing.Size(595, 25);
-            this.receitaBindingNavigator.TabIndex = 0;
-            this.receitaBindingNavigator.Text = "bindingNavigator1";
-            // 
-            // bindingNavigatorMoveFirstItem
-            // 
-            this.bindingNavigatorMoveFirstItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorMoveFirstItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveFirstItem.Image")));
-            this.bindingNavigatorMoveFirstItem.Name = "bindingNavigatorMoveFirstItem";
-            this.bindingNavigatorMoveFirstItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveFirstItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorMoveFirstItem.Text = "Move first";
-            // 
-            // bindingNavigatorMovePreviousItem
-            // 
-            this.bindingNavigatorMovePreviousItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorMovePreviousItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMovePreviousItem.Image")));
-            this.bindingNavigatorMovePreviousItem.Name = "bindingNavigatorMovePreviousItem";
-            this.bindingNavigatorMovePreviousItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMovePreviousItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorMovePreviousItem.Text = "Move previous";
-            // 
-            // bindingNavigatorSeparator
-            // 
-            this.bindingNavigatorSeparator.Name = "bindingNavigatorSeparator";
-            this.bindingNavigatorSeparator.Size = new System.Drawing.Size(6, 25);
-            // 
-            // bindingNavigatorPositionItem
-            // 
-            this.bindingNavigatorPositionItem.AccessibleName = "Position";
-            this.bindingNavigatorPositionItem.AutoSize = false;
-            this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
-            this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(50, 23);
-            this.bindingNavigatorPositionItem.Text = "0";
-            this.bindingNavigatorPositionItem.ToolTipText = "Current position";
-            // 
-            // bindingNavigatorCountItem
-            // 
-            this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
-            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(35, 22);
-            this.bindingNavigatorCountItem.Text = "of {0}";
-            this.bindingNavigatorCountItem.ToolTipText = "Total number of items";
-            // 
-            // bindingNavigatorSeparator1
-            // 
-            this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator";
-            this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 25);
-            // 
-            // bindingNavigatorMoveNextItem
-            // 
-            this.bindingNavigatorMoveNextItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorMoveNextItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveNextItem.Image")));
-            this.bindingNavigatorMoveNextItem.Name = "bindingNavigatorMoveNextItem";
-            this.bindingNavigatorMoveNextItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorMoveNextItem.Text = "Move next";
-            // 
-            // bindingNavigatorMoveLastItem
-            // 
-            this.bindingNavigatorMoveLastItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorMoveLastItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveLastItem.Image")));
-            this.bindingNavigatorMoveLastItem.Name = "bindingNavigatorMoveLastItem";
-            this.bindingNavigatorMoveLastItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorMoveLastItem.Text = "Move last";
-            // 
-            // bindingNavigatorSeparator2
-            // 
-            this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator";
-            this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 25);
-            // 
-            // bindingNavigatorDeleteItem
-            // 
-            this.bindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
-            this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
-            this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorDeleteItem.Text = "Delete";
-            // 
-            // receitaBindingNavigatorSaveItem
-            // 
-            this.receitaBindingNavigatorSaveItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.receitaBindingNavigatorSaveItem.Image = ((System.Drawing.Image)(resources.GetObject("receitaBindingNavigatorSaveItem.Image")));
-            this.receitaBindingNavigatorSaveItem.Name = "receitaBindingNavigatorSaveItem";
-            this.receitaBindingNavigatorSaveItem.Size = new System.Drawing.Size(23, 22);
-            this.receitaBindingNavigatorSaveItem.Text = "Save Data";
-            this.receitaBindingNavigatorSaveItem.Click += new System.EventHandler(this.receitaBindingNavigatorSaveItem_Click);
-            // 
-            // receitaDataGridView
-            // 
-            this.receitaDataGridView.AllowUserToAddRows = false;
-            this.receitaDataGridView.AutoGenerateColumns = false;
-            this.receitaDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.receitaDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn1,
-            this.dataGridViewTextBoxColumn2,
-            this.dataGridViewTextBoxColumn3,
-            this.dataGridViewTextBoxColumn4,
-            this.dataGridViewTextBoxColumn5,
-            this.dataGridViewTextBoxColumn6,
-            this.dataGridViewTextBoxColumn7,
-            this.dataGridViewTextBoxColumn8,
-            this.dataGridViewTextBoxColumn9,
-            this.dataGridViewTextBoxColumn10,
-            this.dataGridViewTextBoxColumn11,
-            this.dataGridViewTextBoxColumn12,
-            this.dataGridViewTextBoxColumn13,
-            this.dataGridViewTextBoxColumn14,
-            this.dataGridViewTextBoxColumn15,
-            this.dataGridViewTextBoxColumn16,
-            this.dataGridViewTextBoxColumn17,
-            this.dataGridViewTextBoxColumn18,
-            this.dataGridViewTextBoxColumn19,
-            this.dataGridViewTextBoxColumn20,
-            this.dataGridViewTextBoxColumn21,
-            this.dataGridViewTextBoxColumn22,
-            this.dataGridViewTextBoxColumn23,
-            this.dataGridViewTextBoxColumn24,
-            this.dataGridViewTextBoxColumn25,
-            this.dataGridViewTextBoxColumn26,
-            this.dataGridViewTextBoxColumn27,
-            this.dataGridViewTextBoxColumn28,
-            this.dataGridViewTextBoxColumn29});
-            this.receitaDataGridView.DataSource = this.receitaBindingSource;
-            this.receitaDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.receitaDataGridView.Location = new System.Drawing.Point(0, 25);
-            this.receitaDataGridView.Name = "receitaDataGridView";
-            this.receitaDataGridView.Size = new System.Drawing.Size(595, 313);
-            this.receitaDataGridView.TabIndex = 1;
+            // DataGridreceita
+            // 
+            this.DataGridreceita.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DataGridreceita.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.id,
+            this.historico,
+            this.lodesferico,
+            this.eesferico,
+            this.podesferico,
+            this.poeesferico,
+            this.lodcilindrico,
+            this.loecilindrico,
+            this.podcilindrico,
+            this.poecilindirco,
+            this.lodeixo,
+            this.loeeixo,
+            this.podeixo,
+            this.poeeixo,
+            this.lodaltura,
+            this.loealtura,
+            this.podaltura,
+            this.poealtura,
+            this.loddnp,
+            this.loednp,
+            this.poddnp,
+            this.poednp,
+            this.adicao,
+            this.obs,
+            this.nomemedico,
+            this.data,
+            this.dtvalidade});
+            this.DataGridreceita.Location = new System.Drawing.Point(12, 64);
+            this.DataGridreceita.Name = "DataGridreceita";
+            this.DataGridreceita.Size = new System.Drawing.Size(958, 340);
+            this.DataGridreceita.TabIndex = 1;
+            this.DataGridreceita.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.receitaDataGridView_CellDoubleClick);
+            // 
+            // txtPesquisa
+            // 
+            this.txtPesquisa.Location = new System.Drawing.Point(206, 29);
+            this.txtPesquisa.Name = "txtPesquisa";
+            this.txtPesquisa.Size = new System.Drawing.Size(252, 20);
+            this.txtPesquisa.TabIndex = 2;
+            // 
+            // btnAlterar
+            // 
+            this.btnAlterar.Location = new System.Drawing.Point(895, 410);
+            this.btnAlterar.Name = "btnAlterar";
+            this.btnAlterar.Size = new System.Drawing.Size(75, 23);
+            this.btnAlterar.TabIndex = 3;
+            this.btnAlterar.Text = "Alterar";
+            this.btnAlterar.UseVisualStyleBackColor = true;
+            this.btnAlterar.Click += new System.EventHandler(this.btnAlterar_Click);
+            // 
+            // btnExcluir
+            // 
+            this.btnExcluir.Location = new System.Drawing.Point(814, 410);
+            this.btnExcluir.Name = "btnExcluir";
+            this.btnExcluir.Size = new System.Drawing.Size(75, 23);
+            this.btnExcluir.TabIndex = 4;
+            this.btnExcluir.Text = "Excluir";
+            this.btnExcluir.UseVisualStyleBackColor = true;
+            this.btnExcluir.Click += new System.EventHandler(this.btnExcluir_Click);
+            // 
+            // btnSair
+            // 
+            this.btnSair.Location = new System.Drawing.Point(12, 410);
+            this.btnSair.Name = "btnSair";
+            this.btnSair.Size = new System.Drawing.Size(75, 23);
+            this.btnSair.TabIndex = 5;
+            this.btnSair.Text = "Sair";
+            this.btnSair.UseVisualStyleBackColor = true;
+            this.btnSair.Click += new System.EventHandler(this.btnSair_Click);
+            // 
+            // btnListar
+            // 
+            this.btnListar.Location = new System.Drawing.Point(895, 27);
+            this.btnListar.Name = "btnListar";
+            this.btnListar.Size = new System.Drawing.Size(75, 23);
+            this.btnListar.TabIndex = 6;
+            this.btnListar.Text = "Listar";
+            this.btnListar.UseVisualStyleBackColor = true;
+            this.btnListar.Click += new System.EventHandler(this.btnListar_Click);
+            // 
+            // btnPesquisar
+            // 
+            this.btnPesquisar.Location = new System.Drawing.Point(486, 27);
+            this.btnPesquisar.Name = "btnPesquisar";
+            this.btnPesquisar.Size = new System.Drawing.Size(75, 23);
+            this.btnPesquisar.TabIndex = 7;
+            this.btnPesquisar.Text = "Pesquisa";
+            this.btnPesquisar.UseVisualStyleBackColor = true;
+            this.btnPesquisar.Click += new System.EventHandler(this.btnPesquisar_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(45, 32);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(130, 13);
+            this.label1.TabIndex = 8;
+            this.label1.Text = "Digite o nome do médico :";
             // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "rc_id";
-            this.dataGridViewTextBoxColumn1.HeaderText = "ID";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            // id
             // 
-            // dataGridViewTextBoxColumn2
+            this.id.DataPropertyName = "rc_id";
+            this.id.HeaderText = "ID";
+            this.id.Name = "id";
             // 
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "cl_id";
-            this.dataGridViewTextBoxColumn2.HeaderText = "Cliente";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            // historico
             // 
-            // dataGridViewTextBoxColumn3
+            this.historico.DataPropertyName = "rc_historico";
+            this.historico.HeaderText = "Histórico";
+            this.historico.Name = "historico";
             // 
-            this.dataGridViewTextBoxColumn3.DataPropertyName = "vn_id";
-            this.dataGridViewTextBoxColumn3.HeaderText = "ID da Venda";
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            // lodesferico
             // 
-            // dataGridViewTextBoxColumn4
+            this.lodesferico.DataPropertyName = "rc_lodesferico";
+            this.lodesferico.HeaderText = "Longe OD. Esférico";
+            this.lodesferico.Name = "lodesferico";
             // 
-            this.dataGridViewTextBoxColumn4.DataPropertyName = "rc_historico";
-            this.dataGridViewTextBoxColumn4.HeaderText = "Histórico";
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            // eesferico
             // 
-            // dataGridViewTextBoxColumn5
+            this.eesferico.DataPropertyName = "rc_loeesferico";
+            this.eesferico.HeaderText = "Longe OE. Esférico";
+            this.eesferico.Name = "eesferico";
             // 
-            this.dataGridViewTextBoxColumn5.DataPropertyName = "rc_lodesferico";
-            this.dataGridViewTextBoxColumn5.HeaderText = "Longe O.D. Esférico";
-            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            // podesferico
             // 
-            // dataGridViewTextBoxColumn6
+            this.podesferico.DataPropertyName = "rc_podesferico";
+            this.podesferico.HeaderText = "Perto OD. Esférico";
+            this.podesferico.Name = "podesferico";
             // 
-            this.dataGridViewTextBoxColumn6.DataPropertyName = "rc_loeesferico";
-            this.dataGridViewTextBoxColumn6.HeaderText = "Longe O.E. Esférico";
-            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            // poeesferico
             // 
-            // dataGridViewTextBoxColumn7
+            this.poeesferico.DataPropertyName = "rc_poeesferico";
+            this.poeesferico.HeaderText = "Perto OE. Esférico";
+            this.poeesferico.Name = "poeesferico";
             // 
-            this.dataGridViewTextBoxColumn7.DataPropertyName = "rc_podesferico";
-            this.dataGridViewTextBoxColumn7.HeaderText = "Perto O.D. Esférico";
-            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
+            // lodcilindrico
             // 
-            // dataGridViewTextBoxColumn8
+            this.lodcilindrico.DataPropertyName = "rc_lodcilindrico";
+            this.lodcilindrico.HeaderText = "Longe OD. cilindrico";
+            this.lodcilindrico.Name = "lodcilindrico";
             // 
-            this.dataGridViewTextBoxColumn8.DataPropertyName = "rc_poeesferico";
-            this.dataGridViewTextBoxColumn8.HeaderText = "Perto O.D. Esférico";
-            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
+            // loecilindrico
             // 
-            // dataGridViewTextBoxColumn9
+            this.loecilindrico.DataPropertyName = "rc_loecilindrico";
+            this.loecilindrico.HeaderText = "Longe OE. cilíndrico";
+            this.loecilindrico.Name = "loecilindrico";
             // 
-            this.dataGridViewTextBoxColumn9.DataPropertyName = "rc_lodcilindrico";
-            this.dataGridViewTextBoxColumn9.HeaderText = "Longe O.D. Cilíndrico";
-            this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
+            // podcilindrico
             // 
-            // dataGridViewTextBoxColumn10
+            this.podcilindrico.DataPropertyName = "rc_podcilindrico";
+            this.podcilindrico.HeaderText = "Perto OD. cilindrico";
+            this.podcilindrico.Name = "podcilindrico";
             // 
-            this.dataGridViewTextBoxColumn10.DataPropertyName = "rc_loecilindrico";
-            this.dataGridViewTextBoxColumn10.HeaderText = "Longe O.E. Cilíndrico";
-            this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
+            // poecilindirco
             // 
-            // dataGridViewTextBoxColumn11
+            this.poecilindirco.DataPropertyName = "rc_poecilindrico";
+            this.poecilindirco.HeaderText = "Perto OE. cilindrico";
+            this.poecilindirco.Name = "poecilindirco";
             // 
-            this.dataGridViewTextBoxColumn11.DataPropertyName = "rc_podcilindrico";
-            this.dataGridViewTextBoxColumn11.HeaderText = "Perto O.D. Cilíndrico";
-            this.dataGridViewTextBoxColumn11.Name = "dataGridViewTextBoxColumn11";
+            // lodeixo
             // 
-            // dataGridViewTextBoxColumn12
+            this.lodeixo.DataPropertyName = "rc_lodeixo";
+            this.lodeixo.HeaderText = "Longe OD. eixo";
+            this.lodeixo.Name = "lodeixo";
             // 
-            this.dataGridViewTextBoxColumn12.DataPropertyName = "rc_poecilindrico";
-            this.dataGridViewTextBoxColumn12.HeaderText = "Perto O.E. Cilíndrico";
-            this.dataGridViewTextBoxColumn12.Name = "dataGridViewTextBoxColumn12";
+            // loeeixo
             // 
-            // dataGridViewTextBoxColumn13
+            this.loeeixo.DataPropertyName = "rc_loeeixo";
+            this.loeeixo.HeaderText = "Longe OE. eixo";
+            this.loeeixo.Name = "loeeixo";
             // 
-            this.dataGridViewTextBoxColumn13.DataPropertyName = "rc_lodeixo";
-            this.dataGridViewTextBoxColumn13.HeaderText = "Longe O.D. Eixo";
-            this.dataGridViewTextBoxColumn13.Name = "dataGridViewTextBoxColumn13";
+            // podeixo
             // 
-            // dataGridViewTextBoxColumn14
+            this.podeixo.DataPropertyName = "rc_podeixo";
+            this.podeixo.HeaderText = "Perto OD. eixo";
+            this.podeixo.Name = "podeixo";
             // 
-            this.dataGridViewTextBoxColumn14.DataPropertyName = "rc_loeeixo";
-            this.dataGridViewTextBoxColumn14.HeaderText = "Longe O.E. Eixo";
-            this.dataGridViewTextBoxColumn14.Name = "dataGridViewTextBoxColumn14";
+            // poeeixo
             // 
-            // dataGridViewTextBoxColumn15
+            this.poeeixo.DataPropertyName = "rc_poeeixo";
+            this.poeeixo.HeaderText = "Perto OE. eixo";
+            this.poeeixo.Name = "poeeixo";
             // 
-            this.dataGridViewTextBoxColumn15.DataPropertyName = "rc_podeixo";
-            this.dataGridViewTextBoxColumn15.HeaderText = "Perto O.D. Eixo";
-            this.dataGridViewTextBoxColumn15.Name = "dataGridViewTextBoxColumn15";
+            // lodaltura
             // 
-            // dataGridViewTextBoxColumn16
+            this.lodaltura.DataPropertyName = "rc_lodaltura";
+            this.lodaltura.HeaderText = "Longe OD. altura";
+            this.lodaltura.Name = "lodaltura";
             // 
-            this.dataGridViewTextBoxColumn16.DataPropertyName = "rc_poeeixo";
-            this.dataGridViewTextBoxColumn16.HeaderText = "Perto O.E. Eixo";
-            this.dataGridViewTextBoxColumn16.Name = "dataGridViewTextBoxColumn16";
+            // loealtura
             // 
-            // dataGridViewTextBoxColumn17
+            this.loealtura.DataPropertyName = "rc_loealtura";
+            this.loealtura.HeaderText = "Longe OE. altura";
+            this.loealtura.Name = "loealtura";
             // 
-            this.dataGridViewTextBoxColumn17.DataPropertyName = "rc_lodaltura";
-            this.dataGridViewTextBoxColumn17.HeaderText = "Longe O.D. Altura";
-            this.dataGridViewTextBoxColumn17.Name = "dataGridViewTextBoxColumn17";
+            // podaltura
             // 
-            // dataGridViewTextBoxColumn18
+            this.podaltura.DataPropertyName = "rc_podaltura";
+            this.podaltura.HeaderText = "Perto OD. altura";
+            this.podaltura.Name = "podaltura";
             // 
-            this.dataGridViewTextBoxColumn18.DataPropertyName = "rc_loealtura";
-            this.dataGridViewTextBoxColumn18.HeaderText = "Longe O.E. Altura";
-            this.dataGridViewTextBoxColumn18.Name = "dataGridViewTextBoxColumn18";
+            // poealtura
             // 
-            // dataGridViewTextBoxColumn19
+            this.poealtura.DataPropertyName = "rc_poealtura";
+            this.poealtura.HeaderText = "Perto OD. altura";
+            this.poealtura.Name = "poealtura";
             // 
-            this.dataGridViewTextBoxColumn19.DataPropertyName = "rc_podaltura";
-            this.dataGridViewTextBoxColumn19.HeaderText = "Perto O.D. Altura";
-            this.dataGridViewTextBoxColumn19.Name = "dataGridViewTextBoxColumn19";
+            // loddnp
             // 
-            // dataGridViewTextBoxColumn20
+            this.loddnp.DataPropertyName = "rc_loddnp";
+            this.loddnp.HeaderText = "Longe OD. dnp";
+            this.loddnp.Name = "loddnp";
             // 
-            this.dataGridViewTextBoxColumn20.DataPropertyName = "rc_poealtura";
-            this.dataGridViewTextBoxColumn20.HeaderText = "Perto O.E. Altura";
-            this.dataGridViewTextBoxColumn20.Name = "dataGridViewTextBoxColumn20";
+            // loednp
             // 
-            // dataGridViewTextBoxColumn21
+            this.loednp.DataPropertyName = "rc_loednp, ";
+            this.loednp.HeaderText = "Longe OE. dnp";
+            this.loednp.Name = "loednp";
             // 
-            this.dataGridViewTextBoxColumn21.DataPropertyName = "rc_loddnp";
-            this.dataGridViewTextBoxColumn21.HeaderText = "Longe O.D. DNP";
-            this.dataGridViewTextBoxColumn21.Name = "dataGridViewTextBoxColumn21";
+            // poddnp
             // 
-            // dataGridViewTextBoxColumn22
+            this.poddnp.DataPropertyName = "rc_poddnp";
+            this.poddnp.HeaderText = "Perto OD. dnp";
+            this.poddnp.Name = "poddnp";
             // 
-            this.dataGridViewTextBoxColumn22.DataPropertyName = "rc_loednp";
-            this.dataGridViewTextBoxColumn22.HeaderText = "Longe O.E. DNP";
-            this.dataGridViewTextBoxColumn22.Name = "dataGridViewTextBoxColumn22";
+            // poednp
             // 
-            // dataGridViewTextBoxColumn23
+            this.poednp.DataPropertyName = "rc_poednp";
+            this.poednp.HeaderText = "Perto OE. dnp";
+            this.poednp.Name = "poednp";
             // 
-            this.dataGridViewTextBoxColumn23.DataPropertyName = "rc_poddnp";
-            this.dataGridViewTextBoxColumn23.HeaderText = "Perto O.D. DNP";
-            this.dataGridViewTextBoxColumn23.Name = "dataGridViewTextBoxColumn23";
+            // adicao
             // 
-            // dataGridViewTextBoxColumn24
+            this.adicao.DataPropertyName = "rc_adicao";
+            this.adicao.HeaderText = "Adição";
+            this.adicao.Name = "adicao";
             // 
-            this.dataGridViewTextBoxColumn24.DataPropertyName = "rc_poednp";
-            this.dataGridViewTextBoxColumn24.HeaderText = "Perto O.E. DNP";
-            this.dataGridViewTextBoxColumn24.Name = "dataGridViewTextBoxColumn24";
+            // obs
             // 
-            // dataGridViewTextBoxColumn25
+            this.obs.DataPropertyName = "rc_observacoes ";
+            this.obs.HeaderText = "Observações";
+            this.obs.Name = "obs";
             // 
-            this.dataGridViewTextBoxColumn25.DataPropertyName = "rc_adicao";
-            this.dataGridViewTextBoxColumn25.HeaderText = "Adição";
-            this.dataGridViewTextBoxColumn25.Name = "dataGridViewTextBoxColumn25";
+            // nomemedico
             // 
-            // dataGridViewTextBoxColumn26
+            this.nomemedico.DataPropertyName = "rc_nomemedico";
+            this.nomemedico.HeaderText = "Nome do médico";
+            this.nomemedico.Name = "nomemedico";
             // 
-            this.dataGridViewTextBoxColumn26.DataPropertyName = "rc_nomemedico";
-            this.dataGridViewTextBoxColumn26.HeaderText = "Nome do Médico";
-            this.dataGridViewTextBoxColumn26.Name = "dataGridViewTextBoxColumn26";
+            // data
             // 
-            // dataGridViewTextBoxColumn27
+            this.data.DataPropertyName = "rc_data";
+            this.data.HeaderText = "Data de entrada";
+            this.data.Name = "data";
             // 
-            this.dataGridViewTextBoxColumn27.DataPropertyName = "rc_observacoes";
-            this.dataGridViewTextBoxColumn27.HeaderText = "Observações";
-            this.dataGridViewTextBoxColumn27.Name = "dataGridViewTextBoxColumn27";
+            // dtvalidade
             // 
-            // dataGridViewTextBoxColumn28
-            // 
-            this.dataGridViewTextBoxColumn28.DataPropertyName = "rc_data";
-            this.dataGridViewTextBoxColumn28.HeaderText = "Data";
-            this.dataGridViewTextBoxColumn28.Name = "dataGridViewTextBoxColumn28";
-            // 
-            // dataGridViewTextBoxColumn29
-            // 
-            this.dataGridViewTextBoxColumn29.DataPropertyName = "rc_dtavencimento";
-            this.dataGridViewTextBoxColumn29.HeaderText = "Data de Vencimento";
-            this.dataGridViewTextBoxColumn29.Name = "dataGridViewTextBoxColumn29";
+            this.dtvalidade.DataPropertyName = "rc_dtavalidade";
+            this.dtvalidade.HeaderText = "Validade ";
+            this.dtvalidade.Name = "dtvalidade";
             // 
             // frmListarReceita
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(595, 338);
-            this.Controls.Add(this.receitaDataGridView);
-            this.Controls.Add(this.receitaBindingNavigator);
+            this.ClientSize = new System.Drawing.Size(982, 458);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.btnPesquisar);
+            this.Controls.Add(this.btnListar);
+            this.Controls.Add(this.btnSair);
+            this.Controls.Add(this.btnExcluir);
+            this.Controls.Add(this.btnAlterar);
+            this.Controls.Add(this.txtPesquisa);
+            this.Controls.Add(this.DataGridreceita);
             this.Name = "frmListarReceita";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Listar/Alterar Receita";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.frmListarReceita_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.sysOticaDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.receitaBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.receitaBindingNavigator)).EndInit();
-            this.receitaBindingNavigator.ResumeLayout(false);
-            this.receitaBindingNavigator.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.receitaDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DataGridreceita)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private SysOticaDataSet sysOticaDataSet;
-        private System.Windows.Forms.BindingSource receitaBindingSource;
-        private SysOticaDataSetTableAdapters.receitaTableAdapter receitaTableAdapter;
-        private SysOticaDataSetTableAdapters.TableAdapterManager tableAdapterManager;
-        private System.Windows.Forms.BindingNavigator receitaBindingNavigator;
-        private System.Windows.Forms.ToolStripLabel bindingNavigatorCountItem;
-        private System.Windows.Forms.ToolStripButton bindingNavigatorDeleteItem;
-        private System.Windows.Forms.ToolStripButton bindingNavigatorMoveFirstItem;
-        private System.Windows.Forms.ToolStripButton bindingNavigatorMovePreviousItem;
-        private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator;
-        private System.Windows.Forms.ToolStripTextBox bindingNavigatorPositionItem;
-        private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator1;
-        private System.Windows.Forms.ToolStripButton bindingNavigatorMoveNextItem;
-        private System.Windows.Forms.ToolStripButton bindingNavigatorMoveLastItem;
-        private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator2;
-        private System.Windows.Forms.ToolStripButton receitaBindingNavigatorSaveItem;
-        private System.Windows.Forms.DataGridView receitaDataGridView;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn11;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn12;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn13;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn14;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn15;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn16;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn17;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn18;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn19;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn20;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn21;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn22;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn23;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn24;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn25;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn26;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn27;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn28;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn29;
+        private System.Windows.Forms.DataGridView DataGridreceita;
+        private System.Windows.Forms.TextBox txtPesquisa;
+        private System.Windows.Forms.Button btnAlterar;
+        private System.Windows.Forms.Button btnExcluir;
+        private System.Windows.Forms.Button btnSair;
+        private System.Windows.Forms.Button btnListar;
+        private System.Windows.Forms.Button btnPesquisar;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn historico;
+        private System.Windows.Forms.DataGridViewTextBoxColumn lodesferico;
+        private System.Windows.Forms.DataGridViewTextBoxColumn eesferico;
+        private System.Windows.Forms.DataGridViewTextBoxColumn podesferico;
+        private System.Windows.Forms.DataGridViewTextBoxColumn poeesferico;
+        private System.Windows.Forms.DataGridViewTextBoxColumn lodcilindrico;
+        private System.Windows.Forms.DataGridViewTextBoxColumn loecilindrico;
+        private System.Windows.Forms.DataGridViewTextBoxColumn podcilindrico;
+        private System.Windows.Forms.DataGridViewTextBoxColumn poecilindirco;
+        private System.Windows.Forms.DataGridViewTextBoxColumn lodeixo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn loeeixo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn podeixo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn poeeixo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn lodaltura;
+        private System.Windows.Forms.DataGridViewTextBoxColumn loealtura;
+        private System.Windows.Forms.DataGridViewTextBoxColumn podaltura;
+        private System.Windows.Forms.DataGridViewTextBoxColumn poealtura;
+        private System.Windows.Forms.DataGridViewTextBoxColumn loddnp;
+        private System.Windows.Forms.DataGridViewTextBoxColumn loednp;
+        private System.Windows.Forms.DataGridViewTextBoxColumn poddnp;
+        private System.Windows.Forms.DataGridViewTextBoxColumn poednp;
+        private System.Windows.Forms.DataGridViewTextBoxColumn adicao;
+        private System.Windows.Forms.DataGridViewTextBoxColumn obs;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nomemedico;
+        private System.Windows.Forms.DataGridViewTextBoxColumn data;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dtvalidade;
     }
 }

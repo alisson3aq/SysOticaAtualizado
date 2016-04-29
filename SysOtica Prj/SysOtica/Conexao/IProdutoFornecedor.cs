@@ -10,7 +10,7 @@ namespace SysOtica.Conexao
     interface IProdutoFornecedor
     {
 
-        void inserir(ProdutoFornecedor produtofornecedor);
+        void inserir(ProdutoFornecedor pf);
         List<ProdutoFornecedor> selecionafornecedor();
         List<ProdutoFornecedor> selecionaproduto(int pr_id);
 

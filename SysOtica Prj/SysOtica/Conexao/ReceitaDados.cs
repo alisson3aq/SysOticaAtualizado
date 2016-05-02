@@ -16,20 +16,99 @@ namespace SysOtica.Conexao
 
         public void inserirReceita(Receita receita)
         {
-           // '"  + receita.Rc_historico + "',
-            string sql = "INSERT INTO Receita VALUES ('"  + receita.Rc_lodesferico + "','"   + receita.Rc_loeesferico + "','" + receita.Rc_podesferico + "','"  + 
-               "' + '" + receita.Rc_poeesferico + "','"   + receita.Rc_lodcilindrico + "','" + receita.Rc_loecilindrico + "','" + receita.Rc_podcilindrico +"','" + 
-                         receita.Rc_poecilindrico + "','" + receita.Rc_lodeixo + "', '"      + receita.Rc_loeeixo + "','"       + receita.Rc_podeixo + "','"      + receita.Rc_poeeixo + "', '" + 
-                         receita.Rc_lodaltura + "', '"    + receita.Rc_loealtura+ "', '"     + receita.Rc_podaltura + "', '"    + receita.Rc_poealtura + "', '"   + receita.Rc_loddnp + "','" + 
-                         receita.Rc_loednp + "','"        + receita.Rc_poddnp + "','"        + receita.Rc_poednp + "','"        + receita.Rc_adicao + "','"       + receita.Rc_nomemedico + "', '" + 
-                         receita.Rc_observacoes + "','"   + receita.Rc_data + "','"          + receita.Rc_dtavalidade + "')";
-
             try
             {
+                //abrir a conexão
                 conn.AbrirConexao();
-                SqlCommand cmd = new SqlCommand(sql, conn.cone);
+                string sql = "INSERT INTO receita (rc_historico, rc_lodesferico, rc_loeesferico,rc_podesferico, rc_poeesferico,rc_lodcilindrico,rc_loecilindrico, rc_podcilindrico ,rc_poecilindrico,rc_lodeixo,rc_loeeixo,rc_podeixo,rc_poeeixo,rc_lodaltura,rc_loealtura,rc_podaltura,rc_poealtura,rc_loddnp,rc_loednp, rc_poddnp,rc_poednp,rc_adicao,rc_nomemedico,rc_observacoes,rc_data,rc_dtavalidade) Values (@rc_historico, @rc_lodesferico, @rc_loeesferico, @rc_podesferico, @rc_poeesferico, @rc_lodcilindrico, @rc_loecilindrico, @rc_podcilindrico ,@rc_poecilindrico, @rc_lodeixo, @rc_loeeixo, @rc_podeixo, @rc_poeeixo, @rc_lodaltura, @rc_loealtura, @rc_podaltura, @rc_poealtura,@rc_loddnp,@rc_loednp, @rc_poddnp,@rc_poednp,@rc_adicao,@rc_nomemedico,@rc_observacoes,@rc_data,@rc_dtavalidade)";
+                //instrucao a ser executada
+                SqlCommand cmd = new SqlCommand(sql,conn.cone);
+
+                cmd.Parameters.Add("@rc_historico", SqlDbType.VarChar);
+                cmd.Parameters["@rc_historico"].Value = receita.Rc_historico;
+
+                cmd.Parameters.Add("@rc_lodesferico", SqlDbType.Date);
+                cmd.Parameters["@rc_lodesferico"].Value = receita.Rc_lodesferico;
+
+                cmd.Parameters.Add("@rc_loeesferico", SqlDbType.VarChar);
+                cmd.Parameters["@rc_loeesferico"].Value = receita.Rc_loeesferico;
+
+                cmd.Parameters.Add("@rc_podesferico", SqlDbType.VarChar);
+                cmd.Parameters["@rc_podesferico"].Value = receita.Rc_podesferico;
+
+                cmd.Parameters.Add("@rc_poeesferico", SqlDbType.VarChar);
+                cmd.Parameters["@rc_poeesferico"].Value = receita.Rc_poeesferico;
+
+                cmd.Parameters.Add("@rc_lodcilindrico", SqlDbType.VarChar);
+                cmd.Parameters["@rc_lodcilindrico"].Value = receita.Rc_lodcilindrico;
+
+                cmd.Parameters.Add("@rc_loecilindrico", SqlDbType.VarChar);
+                cmd.Parameters["@rc_loecilindrico"].Value = receita.Rc_loecilindrico;
+
+                cmd.Parameters.Add("@rc_podcilindrico", SqlDbType.VarChar);
+                cmd.Parameters["@rc_podcilindrico"].Value = receita.Rc_podcilindrico;
+
+                cmd.Parameters.Add("@rc_poecilindrico", SqlDbType.VarChar);
+                cmd.Parameters["@rc_poecilindrico"].Value = receita.Rc_poecilindrico;
+
+                cmd.Parameters.Add("@rc_lodeixo", SqlDbType.VarChar);
+                cmd.Parameters["@rc_lodeixo"].Value = receita.Rc_lodeixo;
+
+                cmd.Parameters.Add("@rc_loeeixo", SqlDbType.VarChar);
+                cmd.Parameters["@rc_loeeixo"].Value = receita.Rc_loeeixo;
+
+                cmd.Parameters.Add("@rc_podeixo", SqlDbType.VarChar);
+                cmd.Parameters["@rc_podeixo"].Value = receita.Rc_podeixo;
+
+                cmd.Parameters.Add("@rc_poeeixo", SqlDbType.VarChar);
+                cmd.Parameters["@rc_poeeixo"].Value = receita.Rc_poeeixo;
+
+                cmd.Parameters.Add("@rc_lodaltura", SqlDbType.VarChar);
+                cmd.Parameters["@rc_lodaltura"].Value = receita.Rc_lodaltura;
+
+                cmd.Parameters.Add("@rc_loealtura", SqlDbType.VarChar);
+                cmd.Parameters["@rc_loealtura"].Value = receita.Rc_loealtura;
+
+                cmd.Parameters.Add("@rc_podaltura", SqlDbType.VarChar);
+                cmd.Parameters["@rc_podaltura"].Value = receita.Rc_podaltura;
+
+                cmd.Parameters.Add("@rc_poealtura", SqlDbType.VarChar);
+                cmd.Parameters["@rc_poealtura"].Value = receita.Rc_poealtura;
+
+                cmd.Parameters.Add("@rc_loddnp", SqlDbType.VarChar);
+                cmd.Parameters["@rc_loddnp"].Value = receita.Rc_loddnp;
+
+                cmd.Parameters.Add("@rc_loednp", SqlDbType.VarChar);
+                cmd.Parameters["@rc_loednp"].Value = receita.Rc_loednp;
+
+                cmd.Parameters.Add("@rc_poddnp", SqlDbType.VarChar);
+                cmd.Parameters["@rc_poddnp"].Value = receita.Rc_poddnp;
+
+                cmd.Parameters.Add("@rc_poednp", SqlDbType.VarChar);
+                cmd.Parameters["@rc_poednp"].Value = receita.Rc_poednp;
+
+                cmd.Parameters.Add("@rc_adicao", SqlDbType.VarChar);
+                cmd.Parameters["@rc_adicao"].Value = receita.Rc_adicao;
+
+                cmd.Parameters.Add("@rc_nomemedico", SqlDbType.VarChar);
+                cmd.Parameters["@rc_nomemedico"].Value = receita.Rc_nomemedico;
+
+                cmd.Parameters.Add("@rc_observacoes", SqlDbType.VarChar);
+                cmd.Parameters["@rc_observacoes"].Value = receita.Rc_observacoes;
+
+                cmd.Parameters.Add("@rc_data", SqlDbType.VarChar);
+                cmd.Parameters["@rc_data"].Value = receita.Rc_data;
+
+                cmd.Parameters.Add("@rc_dtavalidade", SqlDbType.VarChar);
+                cmd.Parameters["@rc_dtavalidade"].Value = receita.Rc_dtavalidade;
+
+                //executando a instrucao 
                 cmd.ExecuteNonQuery();
+                //liberando a memoria 
+                cmd.Dispose();
+                //fechando a conexao
                 conn.FecharConexao();
+            
             }
             catch (SqlException e)
             {
@@ -43,20 +122,101 @@ namespace SysOtica.Conexao
 
         public void alterarReceita(Receita receita)
         {
-            string sql = "UPDATE Receita SET                           rc_historico ='"     + receita.Rc_historico + "',     rc_lodesferico = '" + receita.Rc_lodesferico + "',    rc_loeesferico=    '" + receita.Rc_loeesferico + "'    rc_podesferico = '" + receita.Rc_podesferico + "','" +
-              "' +, rc_poeesferico = '" + receita.Rc_poeesferico + "', rc_lodcilindrico ='" + receita.Rc_lodcilindrico + "', rc_loecilindrico ='"+ receita.Rc_loecilindrico + "',  rc_podcilindrico= '" + receita.Rc_podcilindrico + "', rc_poecilindrico ='" +
-                        receita.Rc_poecilindrico + "',                 rc_lodeixo ='"       + receita.Rc_lodeixo + "',       rc_loeeixo = '"     + receita.Rc_loeeixo + "',        rc_podeixo ='"       + receita.Rc_podeixo + "',       rc_poeeixo ='"       + receita.Rc_poeeixo + "',    rc_lodaltura ='" +
-                        receita.Rc_lodaltura + "',                     rc_loealtura ='"     + receita.Rc_loealtura + "',     rc_podaltura = '"   + receita.Rc_podaltura + "',      rc_poealtura = '"    + receita.Rc_poealtura + "',     rc_loddnp ='"        + receita.Rc_loddnp + "',     rc_loednp='" +
-                        receita.Rc_loednp + "',                        rc_poddnp = '"       + receita.Rc_poddnp + "',        rc_poednp ='"       + receita.Rc_poednp + "',         rc_adicao ='"        + receita.Rc_adicao + "',        rc_nomemedico ='"    + receita.Rc_nomemedico + "', rc_observacoes ='" +
-                        receita.Rc_observacoes + "',                   rc_data ='"          + receita.Rc_data + "',          rc_dtavalidade ='"  + receita.Rc_dtavalidade + "'     WHERE rc_id = "      + (receita.Rc_id) + "";
-            
-            
             try
             {
+                //abrir a conexão
                 conn.AbrirConexao();
+                string sql = "UPDATE receita SET rc_historico = @rc_historico, rc_lodesferico = @rc_lodesferico, rc_loeesferico = @rc_loeesferico,rc_podesferico = @rc_podesferico, rc_poeesferico = @rc_poeesferico,rc_lodcilindrico = @rc_lodcilindrico,rc_loecilindrico = @rc_loecilindrico, rc_podcilindrico = @rc_podcilindrico ,rc_poecilindrico = @rc_poecilindrico,rc_lodeixo = @rc_lodeixo,rc_loeeixo = @rc_loeeixo,rc_podeixo = @rc_podeixo,rc_poeeixo = @rc_poeeixo,rc_lodaltura = @rc_lodaltura,rc_loealtura = @rc_loealtura,rc_podaltura = @rc_podaltura,rc_poealtura = @rc_poealtura,rc_loddnp = @rc_loddnp,rc_loednp = @rc_loednp, rc_poddnp = @rc_poddnp,rc_poednp = @rc_poednp,rc_adicao = @rc_adicao,rc_nomemedico = @c_nomemedico,rc_observacoes = @rc_observacoes,rc_data = @rc_data,rc_dtavalidade = @rc_dtavalidade  WHERE rc_id = @rc_id";
+                //instrucao a ser executada
                 SqlCommand cmd = new SqlCommand(sql, conn.cone);
+
+                cmd.Parameters.Add("@rc_id", SqlDbType.Int);
+                cmd.Parameters["@rc_id"].Value = receita.Rc_id;
+
+                cmd.Parameters.Add("@rc_historico", SqlDbType.VarChar);
+                cmd.Parameters["@rc_historico"].Value = receita.Rc_historico;
+
+                cmd.Parameters.Add("@rc_lodesferico", SqlDbType.Date);
+                cmd.Parameters["@rc_lodesferico"].Value = receita.Rc_lodesferico;
+
+                cmd.Parameters.Add("@rc_loeesferico", SqlDbType.VarChar);
+                cmd.Parameters["@rc_loeesferico"].Value = receita.Rc_loeesferico;
+
+                cmd.Parameters.Add("@rc_podesferico", SqlDbType.VarChar);
+                cmd.Parameters["@rc_podesferico"].Value = receita.Rc_podesferico;
+
+                cmd.Parameters.Add("@rc_poeesferico", SqlDbType.VarChar);
+                cmd.Parameters["@rc_poeesferico"].Value = receita.Rc_poeesferico;
+
+                cmd.Parameters.Add("@rc_lodcilindrico", SqlDbType.VarChar);
+                cmd.Parameters["@rc_lodcilindrico"].Value = receita.Rc_lodcilindrico;
+
+                cmd.Parameters.Add("@rc_loecilindrico", SqlDbType.VarChar);
+                cmd.Parameters["@rc_loecilindrico"].Value = receita.Rc_loecilindrico;
+
+                cmd.Parameters.Add("@rc_podcilindrico", SqlDbType.VarChar);
+                cmd.Parameters["@rc_podcilindrico"].Value = receita.Rc_podcilindrico;
+
+                cmd.Parameters.Add("@rc_poecilindrico", SqlDbType.VarChar);
+                cmd.Parameters["@rc_poecilindrico"].Value = receita.Rc_poecilindrico;
+
+                cmd.Parameters.Add("@rc_lodeixo", SqlDbType.VarChar);
+                cmd.Parameters["@rc_lodeixo"].Value = receita.Rc_lodeixo;
+
+                cmd.Parameters.Add("@rc_loeeixo", SqlDbType.VarChar);
+                cmd.Parameters["@rc_loeeixo"].Value = receita.Rc_loeeixo;
+
+                cmd.Parameters.Add("@rc_podeixo", SqlDbType.VarChar);
+                cmd.Parameters["@rc_podeixo"].Value = receita.Rc_podeixo;
+
+                cmd.Parameters.Add("@rc_poeeixo", SqlDbType.VarChar);
+                cmd.Parameters["@rc_poeeixo"].Value = receita.Rc_poeeixo;
+
+                cmd.Parameters.Add("@rc_lodaltura", SqlDbType.VarChar);
+                cmd.Parameters["@rc_lodaltura"].Value = receita.Rc_lodaltura;
+
+                cmd.Parameters.Add("@rc_loealtura", SqlDbType.VarChar);
+                cmd.Parameters["@rc_loealtura"].Value = receita.Rc_loealtura;
+
+                cmd.Parameters.Add("@rc_podaltura", SqlDbType.VarChar);
+                cmd.Parameters["@rc_podaltura"].Value = receita.Rc_podaltura;
+
+                cmd.Parameters.Add("@rc_poealtura", SqlDbType.VarChar);
+                cmd.Parameters["@rc_poealtura"].Value = receita.Rc_poealtura;
+
+                cmd.Parameters.Add("@rc_loddnp", SqlDbType.VarChar);
+                cmd.Parameters["@rc_loddnp"].Value = receita.Rc_loddnp;
+
+                cmd.Parameters.Add("@rc_loednp", SqlDbType.VarChar);
+                cmd.Parameters["@rc_loednp"].Value = receita.Rc_loednp;
+
+                cmd.Parameters.Add("@rc_poddnp", SqlDbType.VarChar);
+                cmd.Parameters["@rc_poddnp"].Value = receita.Rc_poddnp;
+
+                cmd.Parameters.Add("@rc_poednp", SqlDbType.VarChar);
+                cmd.Parameters["@rc_poednp"].Value = receita.Rc_poednp;
+
+                cmd.Parameters.Add("@rc_adicao", SqlDbType.VarChar);
+                cmd.Parameters["@rc_adicao"].Value = receita.Rc_adicao;
+
+                cmd.Parameters.Add("@rc_nomemedico", SqlDbType.VarChar);
+                cmd.Parameters["@rc_nomemedico"].Value = receita.Rc_nomemedico;
+
+                cmd.Parameters.Add("@rc_observacoes", SqlDbType.VarChar);
+                cmd.Parameters["@rc_observacoes"].Value = receita.Rc_observacoes;
+
+                cmd.Parameters.Add("@rc_data", SqlDbType.VarChar);
+                cmd.Parameters["@rc_data"].Value = receita.Rc_data;
+
+                cmd.Parameters.Add("@rc_dtavalidade", SqlDbType.VarChar);
+                cmd.Parameters["@rc_dtavalidade"].Value = receita.Rc_dtavalidade;
+
+                //executando a instrucao 
                 cmd.ExecuteNonQuery();
-                conn.FecharConexao();
+                //liberando a memoria 
+                cmd.Dispose();
+                //fechando a conexao
+                conn.AbrirConexao();
             }
             catch (SqlException e)
             {
@@ -69,16 +229,24 @@ namespace SysOtica.Conexao
         public void excluirreceita(Receita receita)
         {
 
-            string sql = "DELETE FROM Produto WHERE rc_id = " + (receita.Rc_id) + "";
-
             try
             {
+                //abrir a conexão
                 conn.AbrirConexao();
+                string sql = "DELETE FROM receita WHERE rc_id = @rc_id";
+                //instrucao a ser executada
                 SqlCommand cmd = new SqlCommand(sql, conn.cone);
+                cmd.Parameters.Add("@rc_id", SqlDbType.Int);
+                cmd.Parameters["@rc_id"].Value = receita.Rc_id;
+                //executando a instrucao 
                 cmd.ExecuteNonQuery();
+                //liberando a memoria 
+                cmd.Dispose();
+                //fechando a conexao
                 conn.FecharConexao();
+
             }
-            catch (SqlException e)
+             catch  (SqlException e)
             {
                 throw new BancoDeDadosException("Falha na comunicação com o banco de dados. \n" + e.Message);
             }

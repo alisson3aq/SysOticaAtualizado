@@ -25,9 +25,18 @@ namespace SysOtica.Negocio.Regras_de_Negocio
 
             }
 
-      
+                    public void ValidarGuid(Usuario usuario)
+                    {
+
+                        if (usuario == null)
+                        {
+                            throw new GuidVazioException("Int vazio ou inválido");
+                        }
+
+                    }
 
 
-       
+
+
     }
 }

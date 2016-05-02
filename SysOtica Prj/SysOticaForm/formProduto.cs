@@ -116,6 +116,7 @@ namespace SysOticaForm
         {
             tbDescricao.Text = "";                    
             cbGrupo.Text = "";
+            cmbUnidade.Text = "";
             cbGrife.Text = "";
             tbValor.Text = "";
             tbQuantidade.Text = "";
@@ -160,10 +161,10 @@ namespace SysOticaForm
 
 
                 {
-                    produto.Pr_descricao = tbDescricao.Text;
-                    //produto.Pr_unidade = cbUnidade.Text;                    
+                    produto.Pr_descricao = tbDescricao.Text;                                
                     //int Fr_id = !string.IsNullOrEmpty(cbFornecedor.Text) ? Convert.ToInt32(cbFornecedor.SelectedValue.ToString()) : 0;               
                     //produto.Fr_id = fachada.GetFornecedor(Fr_id);
+                    produto.Pr_unidade = cmbUnidade.SelectedItem.ToString();
                     produto.Pr_Categoria = cbGrupo.SelectedItem.ToString();
                     produto.Pr_grife = cbGrife.SelectedItem.ToString();
                     produto.Pr_valor = int.Parse(tbValor.Text);

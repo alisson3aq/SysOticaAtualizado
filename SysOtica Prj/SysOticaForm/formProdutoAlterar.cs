@@ -48,7 +48,7 @@ namespace SysOticaForm
 
                 textID.Text = Convert.ToString(alteraProduto.Pr_id);
                 tbDescricao.Text = alteraProduto.Pr_descricao;
-                //cbUnidade.Text = alteraProduto.Pr_unidade;               
+                cmbUnidade.Text = alteraProduto.Pr_unidade;               
                 cbGrupo.Text = alteraProduto.Pr_Categoria;
                 cbGrife.Text = alteraProduto.Pr_grife;
                 tbValor.Text = Convert.ToString(alteraProduto.Pr_valor);
@@ -82,6 +82,7 @@ namespace SysOticaForm
                 {
                     p.Pr_id = Convert.ToInt32(textID.Text);
                     p.Pr_descricao = tbDescricao.Text;
+                    p.Pr_unidade = cmbUnidade.SelectedItem.ToString();
                     p.Pr_Categoria = cbGrupo.SelectedItem.ToString();
                     p.Pr_grife = cbGrife.SelectedItem.ToString();
                     p.Pr_valor = Convert.ToDecimal(tbValor.Text);
@@ -99,6 +100,7 @@ namespace SysOticaForm
                 {
                     alteraProduto.Pr_id = Convert.ToInt32(textID.Text);
                     alteraProduto.Pr_descricao = tbDescricao.Text;
+                    alteraProduto.Pr_unidade = cmbUnidade.SelectedItem.ToString();
                     alteraProduto.Pr_Categoria = cbGrupo.SelectedItem.ToString();
                     alteraProduto.Pr_grife = cbGrife.SelectedItem.ToString();
                     alteraProduto.Pr_valor = Convert.ToDecimal(tbValor.Text);
@@ -126,7 +128,8 @@ namespace SysOticaForm
         }
         public void LimparCampos()
         {
-            tbDescricao.Text = "";                
+            tbDescricao.Text = "";
+            cmbUnidade.Text = "";                
             cbGrupo.Text = "";
             cbGrife.Text = "";
             tbValor.Text = "";

@@ -17,14 +17,74 @@ namespace SysOtica.Conexao
 
         public void inserirCliente(Cliente c)
         {
-            string sql = "INSERT INTO Cliente VALUES ('" + c.Cl_nome + "','" + c.Cl_datanascimento + "','" + c.Cl_cpf + "','" + c.Cl_rg + "','" + c.Cl_telefone + "','" + c.Cl_celular + "','" + c.Cl_telefone2 + "','" + c.Cl_cep + "','" + c.Cl_endereco + "','" + c.Cl_numero + "','" + c.Cl_bairro + "','" + c.Cl_cidade + "','" + c.Cl_uf + "','" + c.Cl_email + "','" + c.Cl_nomepai + "','" + c.Cl_nomemae + "','" + c.Cl_profissao + "','" + c.Cl_observacoes + "')";
 
-            try
-            {
+            try {
                 conn.AbrirConexao();
-                SqlCommand cmd = new SqlCommand(sql, conn.cone);
-                cmd.ExecuteNonQuery();
-                conn.FecharConexao();
+            string sql = "INSERT INTO Cliente (cl_nome, cl_datanascimento, cl_cpf, cl_rg, cl_telefone, cl_celular, cl_telefone2, cl_cep, cl_endereco, cl_numero, cl_bairro, cl_cidade, cl_uf, cl_email, cl_nomepai, cl_nomemae, cl_profissao, cl_observacoes) Values (@cl_nome, @cl_datanascimento, @cl_cpf, @cl_rg, @cl_telefone, @cl_celular, @cl_telefone2, @cl_cep, @cl_endereco, @cl_numero, @cl_bairro, @cl_cidade, @cl_uf, @cl_email, @cl_nomepai, @cl_nomemae, @cl_profissao, @cl_observacoes)";
+            //instrucao a ser executada
+            SqlCommand cmd = new SqlCommand(sql, conn.cone);
+
+            cmd.Parameters.Add("@cl_nome", SqlDbType.VarChar);
+            cmd.Parameters["@cl_nome"].Value = c.Cl_nome;
+
+            cmd.Parameters.Add("@cl_datanascimento", SqlDbType.Date);
+            cmd.Parameters["@cl_datanascimento"].Value = c.Cl_datanascimento;
+
+            cmd.Parameters.Add("@cl_cpf", SqlDbType.VarChar);
+            cmd.Parameters["@cl_cpf"].Value = c.Cl_cpf;
+
+            cmd.Parameters.Add("@cl_rg", SqlDbType.VarChar);
+            cmd.Parameters["@cl_rg"].Value = c.Cl_rg;
+
+            cmd.Parameters.Add("@cl_telefone", SqlDbType.VarChar);
+            cmd.Parameters["@cl_telefone"].Value = c.Cl_telefone;
+
+            cmd.Parameters.Add("@cl_celular", SqlDbType.VarChar);
+            cmd.Parameters["@cl_celular"].Value = c.Cl_celular;
+
+            cmd.Parameters.Add("@cl_telefone2", SqlDbType.VarChar);
+            cmd.Parameters["@cl_telefone2"].Value = c.Cl_telefone2;
+
+            cmd.Parameters.Add("@cl_cep", SqlDbType.VarChar);
+            cmd.Parameters["@cl_cep"].Value = c.Cl_cep;
+
+            cmd.Parameters.Add("@cl_endereco", SqlDbType.VarChar);
+            cmd.Parameters["@cl_endereco"].Value = c.Cl_endereco;
+
+            cmd.Parameters.Add("@cl_numero", SqlDbType.VarChar);
+            cmd.Parameters["@cl_numero"].Value = c.Cl_numero;
+
+            cmd.Parameters.Add("@cl_bairro", SqlDbType.VarChar);
+            cmd.Parameters["@cl_bairro"].Value = c.Cl_bairro;
+
+            cmd.Parameters.Add("@cl_cidade", SqlDbType.VarChar);
+            cmd.Parameters["@cl_cidade"].Value = c.Cl_cidade;
+
+            cmd.Parameters.Add("@cl_uf", SqlDbType.VarChar);
+            cmd.Parameters["@cl_uf"].Value = c.Cl_uf;
+
+            cmd.Parameters.Add("@cl_email", SqlDbType.VarChar);
+            cmd.Parameters["@cl_email"].Value = c.Cl_email;
+
+            cmd.Parameters.Add("@cl_nomepai", SqlDbType.VarChar);
+            cmd.Parameters["@cl_nomepai"].Value = c.Cl_nomepai;
+
+            cmd.Parameters.Add("@cl_nomemae", SqlDbType.VarChar);
+            cmd.Parameters["@cl_nomemae"].Value = c.Cl_nomemae;
+
+            cmd.Parameters.Add("@cl_profissao", SqlDbType.VarChar);
+            cmd.Parameters["@cl_profissao"].Value = c.Cl_profissao;
+
+            cmd.Parameters.Add("@cl_observacoes", SqlDbType.VarChar);
+            cmd.Parameters["@cl_observacoes"].Value = c.Cl_observacoes;
+
+
+            //executando a instrucao 
+            cmd.ExecuteNonQuery();
+            //liberando a memoria 
+            cmd.Dispose();
+            //fechando a conexao
+            conn.FecharConexao();
             }
             catch (SqlException e)
             {
@@ -33,14 +93,80 @@ namespace SysOtica.Conexao
         }
         public void alterarCliente(Cliente c)
         {
-            string sql = "UPDATE Cliente SET cl_nome = '" + c.Cl_nome + "',cl_datanascimento = '" + c.Cl_datanascimento + "', cl_cpf ='" + c.Cl_cpf + "', cl_rg ='" + c.Cl_rg + "', cl_telefone = '" + c.Cl_telefone + "', cl_celular ='" + c.Cl_celular + "', cl_telefone2 ='" + c.Cl_telefone2 + "', cl_cep ='" + c.Cl_cep + "', cl_endereco ='" + c.Cl_endereco + "', cl_numero ='" + c.Cl_numero + "', cl_bairro ='" + c.Cl_bairro + "', cl_cidade ='" + c.Cl_cidade + "',cl_uf='" + c.Cl_uf + "', cl_email ='" + c.Cl_email + "', cl_nomepai ='" + c.Cl_nomepai + "',cl_nomemae ='" + c.Cl_nomemae + "', cl_profissao ='" + c.Cl_profissao + "', Cl_observacoes ='" + c.Cl_observacoes + "'WHERE cl_id = " + (c.Cl_id) + "";
 
             try
             {
+                //abrir a conexão
                 conn.AbrirConexao();
+                string sql = "UPDATE cliente SET  cl_nome = @cl_nome, cl_datanascimento = @cl_datanascimento, cl_cpf	= @cl_cpf, cl_rg = @cl_rg, cl_telefone = @cl_telefone, cl_celular = @cl_celular, cl_telefone2 = @cl_telefone2, cl_cep = @cl_cep, cl_endereco = @cl_endereco, cl_numero = @cl_numero, cl_bairro	= @cl_bairro, cl_cidade = @cl_cidade, cl_uf = @cl_uf, cl_email = @cl_email, cl_nomepai = @cl_nomepai, cl_nomemae = @cl_nomemae, cl_profissao = @cl_profissao, cl_observacoes = @cl_observacoes WHERE cl_id = @cl_id;";
+                //instrucao a ser executada
                 SqlCommand cmd = new SqlCommand(sql, conn.cone);
+
+                cmd.Parameters.Add("@cl_id", SqlDbType.Int);
+                cmd.Parameters["@cl_id"].Value = c.Cl_id;
+
+                cmd.Parameters.Add("@cl_nome", SqlDbType.VarChar);
+                cmd.Parameters["@cl_nome"].Value = c.Cl_nome;
+
+                cmd.Parameters.Add("@cl_datanascimento", SqlDbType.Date);
+                cmd.Parameters["@cl_datanascimento"].Value = c.Cl_datanascimento;
+
+                cmd.Parameters.Add("@cl_cpf", SqlDbType.VarChar);
+                cmd.Parameters["@cl_cpf"].Value = c.Cl_cpf;
+
+                cmd.Parameters.Add("@cl_rg", SqlDbType.VarChar);
+                cmd.Parameters["@cl_rg"].Value = c.Cl_rg;
+
+                cmd.Parameters.Add("@cl_telefone", SqlDbType.VarChar);
+                cmd.Parameters["@cl_telefone"].Value = c.Cl_telefone;
+
+                cmd.Parameters.Add("@cl_celular", SqlDbType.VarChar);
+                cmd.Parameters["@cl_celular"].Value = c.Cl_celular;
+
+                cmd.Parameters.Add("@cl_telefone2", SqlDbType.VarChar);
+                cmd.Parameters["@cl_telefone2"].Value = c.Cl_telefone2;
+
+                cmd.Parameters.Add("@cl_cep", SqlDbType.VarChar);
+                cmd.Parameters["@cl_cep"].Value = c.Cl_cep;
+
+                cmd.Parameters.Add("@cl_endereco", SqlDbType.VarChar);
+                cmd.Parameters["@cl_endereco"].Value = c.Cl_endereco;
+
+                cmd.Parameters.Add("@cl_numero", SqlDbType.VarChar);
+                cmd.Parameters["@cl_numero"].Value = c.Cl_numero;
+
+                cmd.Parameters.Add("@cl_bairro", SqlDbType.VarChar);
+                cmd.Parameters["@cl_bairro"].Value = c.Cl_bairro;
+
+                cmd.Parameters.Add("@cl_cidade", SqlDbType.VarChar);
+                cmd.Parameters["@cl_cidade"].Value = c.Cl_cidade;
+
+                cmd.Parameters.Add("@cl_uf", SqlDbType.VarChar);
+                cmd.Parameters["@cl_uf"].Value = c.Cl_uf;
+
+                cmd.Parameters.Add("@cl_email", SqlDbType.VarChar);
+                cmd.Parameters["@cl_email"].Value = c.Cl_email;
+
+                cmd.Parameters.Add("@cl_nomepai", SqlDbType.VarChar);
+                cmd.Parameters["@cl_nomepai"].Value = c.Cl_nomepai;
+
+                cmd.Parameters.Add("@cl_nomemae", SqlDbType.VarChar);
+                cmd.Parameters["@cl_nomemae"].Value = c.Cl_nomemae;
+
+                cmd.Parameters.Add("@cl_profissao", SqlDbType.VarChar);
+                cmd.Parameters["@cl_profissao"].Value = c.Cl_profissao;
+
+                cmd.Parameters.Add("@cl_observacoes", SqlDbType.VarChar);
+                cmd.Parameters["@cl_observacoes"].Value = c.Cl_observacoes;
+
+                //executando a instrucao 
                 cmd.ExecuteNonQuery();
+                //liberando a memoria 
+                cmd.Dispose();
+                //fechando a conexao
                 conn.FecharConexao();
+
+
             }
             catch (SqlException e)
             {
@@ -50,14 +176,22 @@ namespace SysOtica.Conexao
         }
         public void excluirCliente(Cliente c)
         {
-            string sql = "DELETE FROM Cliente WHERE cl_id =" + (c.Cl_id) + "";
-            try
-            {
-                conn.AbrirConexao();
-                SqlCommand cmd = new SqlCommand(sql, conn.cone);
-                cmd.ExecuteNonQuery();
-                conn.FecharConexao();
-            }
+            try {
+
+                //abrir a conexão
+                    conn.AbrirConexao();
+                    string sql = "DELETE FROM cliente WHERE cl_id = @cl_id";
+                    //instrucao a ser executada
+                    SqlCommand cmd = new SqlCommand(sql,conn.cone);
+                    cmd.Parameters.Add("@cl_id", SqlDbType.Int);
+                    cmd.Parameters["@cl_id"].Value = c.Cl_id;
+                    //executando a instrucao 
+                    cmd.ExecuteNonQuery();
+                    //liberando a memoria 
+                    cmd.Dispose();
+                    //fechando a conexao
+                    conn.FecharConexao();
+        }
             catch (SqlException e)
             {
                 throw new BancoDeDadosException("Falha na comunicação com o banco de dados. \n" + e.Message);

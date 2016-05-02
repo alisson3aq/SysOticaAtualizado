@@ -12,24 +12,26 @@ namespace SysOtica.Negocio.Classes_Basicas
         private int pr_id;
         private String pr_descricao;      
         private String pr_categoria;
+        private string pr_unidade;
         private String pr_grife;
         private decimal pr_valor;
         private int pr_qtd;
         private int pr_estoqueminimo;       
-        private List<ProdutoFornecedor> pf_id;
+        private List<ProdutoFornecedor> items_pf;
         private List<ProdutoVenda> pv_id;
     
 
-        public Produto(int pr_id, string pr_descricao, string pr_categoria, string pr_grife, decimal pr_valor, int pr_qtd, int pr_estoqueminimo, int fr_id, List<ProdutoFornecedor> pf_id, List<ProdutoVenda> pv_id )
+        public Produto(int pr_id, string pr_descricao, string pr_categoria, string pr_unidade, string pr_grife, decimal pr_valor, int pr_qtd, int pr_estoqueminimo, int fr_id, List<ProdutoFornecedor> items_pf, List<ProdutoVenda> pv_id )
         {
             this.Pr_id = pr_id;
             this.Pr_descricao = pr_descricao;           
             this.pr_categoria = pr_categoria;
+            this.pr_unidade = pr_unidade;
             this.Pr_grife = pr_grife;
             this.Pr_valor = pr_valor;
             this.Pr_qtd = pr_qtd;
             this.Pr_estoqueminimo = pr_estoqueminimo;                    
-            this.Pf_id = new List<ProdutoFornecedor>();
+            this.items_pf = new List<ProdutoFornecedor>();
             this.Pv_id = new List<ProdutoVenda>();          
         }
 
@@ -76,6 +78,20 @@ namespace SysOtica.Negocio.Classes_Basicas
                 pr_categoria = value;
             }
         }
+
+        public string Pr_unidade
+        {
+            get
+            {
+                return pr_unidade;
+            }
+
+            set
+            {
+                pr_unidade = value;
+            }
+        }
+
 
         public string Pr_grife
         {
@@ -129,16 +145,16 @@ namespace SysOtica.Negocio.Classes_Basicas
             }
         }
 
-        public List<ProdutoFornecedor> Pf_id
+        public List<ProdutoFornecedor> Items_pf
         {
             get
             {
-                return pf_id;
+                return items_pf;
             }
 
             set
             {
-                pf_id = value;
+                items_pf = value;
             }
         }
 

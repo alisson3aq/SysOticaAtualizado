@@ -16,15 +16,38 @@ namespace SysOtica.Conexao
 
         public void inserirUsuario(Usuario usu)
         {
+            try {
 
-            string sql = "INSERT INTO Usuario VALUES ('" + usu.Us_senha + "','" + usu.Us_endereco + "','" + usu.Us_telefone + "','" + usu.Us_tipo + "','" + usu.Us_usuario + "','" + usu.Us_nome + "')";
+            conn.AbrirConexao();
+                string sql = "INSERT INTO usuario (us_senha, us_endereco, us_telefone, us_tipo, us_usuario, us_nome) values (@us_senha, @us_endereco, @us_telefone, @us_tipo, @us_usuario, @us_nome)";
+            //instrucao a ser executada
+            SqlCommand cmd = new SqlCommand(sql,conn.cone);
 
-            try
-            {
-                conn.AbrirConexao();
-                SqlCommand cmd = new SqlCommand(sql, conn.cone);
-                cmd.ExecuteNonQuery();
-                conn.FecharConexao();
+            cmd.Parameters.Add("@us_senha", SqlDbType.VarChar);
+            cmd.Parameters["@us_senha"].Value = usu.Us_senha;
+
+            cmd.Parameters.Add("@us_endereco", SqlDbType.VarChar);
+            cmd.Parameters["@us_endereco"].Value = usu.Us_endereco;
+
+            cmd.Parameters.Add("@us_telefone", SqlDbType.VarChar);
+            cmd.Parameters["@us_telefone"].Value = usu.Us_telefone;
+
+            cmd.Parameters.Add("@us_tipo", SqlDbType.VarChar);
+            cmd.Parameters["@us_tipo"].Value = usu.Us_tipo;
+
+            cmd.Parameters.Add("@us_usuario", SqlDbType.VarChar);
+            cmd.Parameters["@us_usuario"].Value = usu.Us_usuario;
+
+            cmd.Parameters.Add("@us_nome", SqlDbType.VarChar);
+            cmd.Parameters["@us_nome"].Value = usu.Us_nome;
+
+            //executando a instrucao 
+            cmd.ExecuteNonQuery();
+            //liberando a memoria 
+            cmd.Dispose();
+            //fechando a conexao
+            conn.FecharConexao();
+
             }
             catch (SqlException e)
             {
@@ -36,13 +59,40 @@ namespace SysOtica.Conexao
 
         public void alteraUsuario(Usuario usu)
         {
-            string sql = " UPDATE Usuario SET  us_senha= '" + usu.Us_senha + "', us_endereco = '" + usu.Us_endereco + "', us_telefone = '" + usu.Us_telefone + "', us_tipo = '" + usu.Us_tipo + "', us_usuario = '" + usu.Us_usuario + "', us_nome = '" + usu.Us_nome + "' WHERE us_id = " + (usu.Us_id) + "";
-
             try
             {
+                //abrir a conexão
                 conn.AbrirConexao();
+                string sql = "UPDATE usuario SET us_senha = @us_senha, us_endereco = @us_endereco, us_telefone = @us_telefone,us_tipo = @us_tipo, us_usuario = @us_usuario,us_nome = @us_nome WHERE us_id = @us_id";
+                //instrucao a ser executada
                 SqlCommand cmd = new SqlCommand(sql, conn.cone);
+
+                cmd.Parameters.Add("@us_id", SqlDbType.Int);
+                cmd.Parameters["@us_id"].Value = usu.Us_id;
+
+                cmd.Parameters.Add("@us_senha", SqlDbType.VarChar);
+                cmd.Parameters["@us_senha"].Value = usu.Us_senha;
+
+                cmd.Parameters.Add("@us_endereco", SqlDbType.VarChar);
+                cmd.Parameters["@us_endereco"].Value = usu.Us_endereco;
+
+                cmd.Parameters.Add("@us_telefone", SqlDbType.VarChar);
+                cmd.Parameters["@us_telefone"].Value = usu.Us_telefone;
+
+                cmd.Parameters.Add("@us_tipo", SqlDbType.VarChar);
+                cmd.Parameters["@us_tipo"].Value = usu.Us_tipo;
+
+                cmd.Parameters.Add("@us_usuario", SqlDbType.VarChar);
+                cmd.Parameters["@us_usuario"].Value = usu.Us_usuario;
+
+                cmd.Parameters.Add("@us_nome", SqlDbType.VarChar);
+                cmd.Parameters["@us_nome"].Value = usu.Us_nome;
+
+                //executando a instrucao 
                 cmd.ExecuteNonQuery();
+                //liberando a memoria 
+                cmd.Dispose();
+                //fechando a conexao
                 conn.FecharConexao();
             }
             catch (SqlException e)
@@ -56,13 +106,22 @@ namespace SysOtica.Conexao
 
         public void deleteUsuario(Usuario usu)
         {
-            string sql = "DELETE FROM Usuario WHERE us_id = " + (usu.Us_id) + "";
+          
 
             try
             {
+                //abrir a conexão
                 conn.AbrirConexao();
+                string sql = "DELETE FROM usuario WHERE us_id = @us_id";
+                //instrucao a ser executada
                 SqlCommand cmd = new SqlCommand(sql, conn.cone);
+                cmd.Parameters.Add("@cl_id", SqlDbType.Int);
+                cmd.Parameters["@cl_id"].Value = usu.Us_id;
+                //executando a instrucao 
                 cmd.ExecuteNonQuery();
+                //liberando a memoria 
+                cmd.Dispose();
+                //fechando a conexao
                 conn.FecharConexao();
             }
             catch (SqlException e)

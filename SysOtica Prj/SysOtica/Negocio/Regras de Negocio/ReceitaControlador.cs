@@ -46,8 +46,18 @@ namespace SysOtica.Negocio.Regras_de_Negocio
             {
                 throw new CampoVazioException("Campo observação vazio");
             }
-
-
         }
+
+
+         
+            public void ValidarGuid(Receita receita)
+            {
+
+                if (receita == null)
+                {
+                    throw new GuidVazioException("Int vazio ou inválido");
+                }
+
+            }
     }
 }

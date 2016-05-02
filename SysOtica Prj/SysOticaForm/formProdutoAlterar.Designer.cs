@@ -29,6 +29,11 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.textID = new System.Windows.Forms.TextBox();
+            this.buttonSair = new System.Windows.Forms.Button();
+            this.buttonLimpar = new System.Windows.Forms.Button();
+            this.buttonSalvar = new System.Windows.Forms.Button();
             this.tbEstoqueMinimo = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.tbQuantidade = new System.Windows.Forms.TextBox();
@@ -41,16 +46,15 @@
             this.cbGrife = new System.Windows.Forms.ComboBox();
             this.cbGrupo = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.buttonSair = new System.Windows.Forms.Button();
-            this.buttonSalvar = new System.Windows.Forms.Button();
-            this.buttonLimpar = new System.Windows.Forms.Button();
-            this.textID = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.cmbUnidade = new System.Windows.Forms.ComboBox();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.label2);
+            this.groupBox1.Controls.Add(this.cmbUnidade);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.textID);
             this.groupBox1.Controls.Add(this.buttonSair);
@@ -73,6 +77,53 @@
             this.groupBox1.Size = new System.Drawing.Size(527, 349);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(3, 15);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(18, 13);
+            this.label3.TabIndex = 13;
+            this.label3.Text = "ID";
+            // 
+            // textID
+            // 
+            this.textID.Enabled = false;
+            this.textID.Location = new System.Drawing.Point(3, 34);
+            this.textID.Name = "textID";
+            this.textID.Size = new System.Drawing.Size(77, 20);
+            this.textID.TabIndex = 12;
+            // 
+            // buttonSair
+            // 
+            this.buttonSair.Location = new System.Drawing.Point(389, 284);
+            this.buttonSair.Name = "buttonSair";
+            this.buttonSair.Size = new System.Drawing.Size(75, 23);
+            this.buttonSair.TabIndex = 11;
+            this.buttonSair.Text = "Sair";
+            this.buttonSair.UseVisualStyleBackColor = true;
+            this.buttonSair.Click += new System.EventHandler(this.buttonSair_Click);
+            // 
+            // buttonLimpar
+            // 
+            this.buttonLimpar.Location = new System.Drawing.Point(99, 284);
+            this.buttonLimpar.Name = "buttonLimpar";
+            this.buttonLimpar.Size = new System.Drawing.Size(75, 23);
+            this.buttonLimpar.TabIndex = 10;
+            this.buttonLimpar.Text = "Limpar";
+            this.buttonLimpar.UseVisualStyleBackColor = true;
+            this.buttonLimpar.Click += new System.EventHandler(this.buttonLimpar_Click);
+            // 
+            // buttonSalvar
+            // 
+            this.buttonSalvar.Location = new System.Drawing.Point(9, 284);
+            this.buttonSalvar.Name = "buttonSalvar";
+            this.buttonSalvar.Size = new System.Drawing.Size(75, 23);
+            this.buttonSalvar.TabIndex = 9;
+            this.buttonSalvar.Text = "Salvar";
+            this.buttonSalvar.UseVisualStyleBackColor = true;
+            this.buttonSalvar.Click += new System.EventHandler(this.buttonSalvar_Click);
             // 
             // tbEstoqueMinimo
             // 
@@ -144,7 +195,7 @@
             // 
             this.tbDescricao.Location = new System.Drawing.Point(3, 74);
             this.tbDescricao.Name = "tbDescricao";
-            this.tbDescricao.Size = new System.Drawing.Size(461, 20);
+            this.tbDescricao.Size = new System.Drawing.Size(389, 20);
             this.tbDescricao.TabIndex = 0;
             // 
             // cbGrife
@@ -173,52 +224,26 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "Descrição";
             // 
-            // buttonSair
+            // label2
             // 
-            this.buttonSair.Location = new System.Drawing.Point(389, 284);
-            this.buttonSair.Name = "buttonSair";
-            this.buttonSair.Size = new System.Drawing.Size(75, 23);
-            this.buttonSair.TabIndex = 11;
-            this.buttonSair.Text = "Sair";
-            this.buttonSair.UseVisualStyleBackColor = true;
-            this.buttonSair.Click += new System.EventHandler(this.buttonSair_Click);
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(428, 57);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(50, 13);
+            this.label2.TabIndex = 15;
+            this.label2.Text = "Unidade:";
             // 
-            // buttonSalvar
+            // cmbUnidade
             // 
-            this.buttonSalvar.Location = new System.Drawing.Point(9, 284);
-            this.buttonSalvar.Name = "buttonSalvar";
-            this.buttonSalvar.Size = new System.Drawing.Size(75, 23);
-            this.buttonSalvar.TabIndex = 9;
-            this.buttonSalvar.Text = "Salvar";
-            this.buttonSalvar.UseVisualStyleBackColor = true;
-            this.buttonSalvar.Click += new System.EventHandler(this.buttonSalvar_Click);
-            // 
-            // buttonLimpar
-            // 
-            this.buttonLimpar.Location = new System.Drawing.Point(99, 284);
-            this.buttonLimpar.Name = "buttonLimpar";
-            this.buttonLimpar.Size = new System.Drawing.Size(75, 23);
-            this.buttonLimpar.TabIndex = 10;
-            this.buttonLimpar.Text = "Limpar";
-            this.buttonLimpar.UseVisualStyleBackColor = true;
-            this.buttonLimpar.Click += new System.EventHandler(this.buttonLimpar_Click);
-            // 
-            // textID
-            // 
-            this.textID.Enabled = false;
-            this.textID.Location = new System.Drawing.Point(3, 34);
-            this.textID.Name = "textID";
-            this.textID.Size = new System.Drawing.Size(77, 20);
-            this.textID.TabIndex = 12;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(3, 15);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(18, 13);
-            this.label3.TabIndex = 13;
-            this.label3.Text = "ID";
+            this.cmbUnidade.FormattingEnabled = true;
+            this.cmbUnidade.Items.AddRange(new object[] {
+            "PR",
+            "UN"});
+            this.cmbUnidade.Location = new System.Drawing.Point(431, 73);
+            this.cmbUnidade.Name = "cmbUnidade";
+            this.cmbUnidade.Size = new System.Drawing.Size(80, 21);
+            this.cmbUnidade.Sorted = true;
+            this.cmbUnidade.TabIndex = 14;
             // 
             // formProdutoAlterar
             // 
@@ -256,5 +281,7 @@
         private System.Windows.Forms.Button buttonSalvar;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox textID;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.ComboBox cmbUnidade;
     }
 }

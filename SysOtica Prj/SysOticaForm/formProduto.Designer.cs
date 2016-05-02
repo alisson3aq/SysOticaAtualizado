@@ -44,6 +44,8 @@
             this.buttonSalvar = new System.Windows.Forms.Button();
             this.buttonLimpar = new System.Windows.Forms.Button();
             this.buttonSair = new System.Windows.Forms.Button();
+            this.cmbUnidade = new System.Windows.Forms.ComboBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -60,11 +62,13 @@
             // 
             this.tbDescricao.Location = new System.Drawing.Point(6, 34);
             this.tbDescricao.Name = "tbDescricao";
-            this.tbDescricao.Size = new System.Drawing.Size(544, 20);
+            this.tbDescricao.Size = new System.Drawing.Size(393, 20);
             this.tbDescricao.TabIndex = 0;
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.label2);
+            this.groupBox1.Controls.Add(this.cmbUnidade);
             this.groupBox1.Controls.Add(this.tbEstoqueMinimo);
             this.groupBox1.Controls.Add(this.label8);
             this.groupBox1.Controls.Add(this.tbQuantidade);
@@ -196,6 +200,27 @@
             this.buttonSair.UseVisualStyleBackColor = true;
             this.buttonSair.Click += new System.EventHandler(this.buttonSair_Click_1);
             // 
+            // cmbUnidade
+            // 
+            this.cmbUnidade.FormattingEnabled = true;
+            this.cmbUnidade.Items.AddRange(new object[] {
+            "PR",
+            "UN"});
+            this.cmbUnidade.Location = new System.Drawing.Point(470, 34);
+            this.cmbUnidade.Name = "cmbUnidade";
+            this.cmbUnidade.Size = new System.Drawing.Size(80, 21);
+            this.cmbUnidade.Sorted = true;
+            this.cmbUnidade.TabIndex = 9;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(467, 18);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(50, 13);
+            this.label2.TabIndex = 10;
+            this.label2.Text = "Unidade:";
+            // 
             // formProduto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -235,5 +260,7 @@
         private System.Windows.Forms.Button buttonSalvar;
         private System.Windows.Forms.Button buttonLimpar;
         private System.Windows.Forms.Button buttonSair;
+        private System.Windows.Forms.ComboBox cmbUnidade;
+        private System.Windows.Forms.Label label2;
     }
 }

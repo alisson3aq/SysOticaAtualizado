@@ -15,71 +15,52 @@ namespace SysOtica.Negocio.Regras_de_Negocio
 
 
 
-       public void verificaPreenchimento(Produto produto)
+        public void verificaPreenchimento(Produto p)
         {
 
-          if (String.IsNullOrEmpty(produto.Pr_descricao))
+            if (String.IsNullOrEmpty(p.Pr_descricao))
             {
                 throw new CampoVazioException("Campo vazio!");
             }
-            if (produto.Pr_qtd.Equals(""))
+            if (p.Pr_qtd.Equals(""))
             {
                 throw new CampoVazioException("Campo quantidade vazio!");
             }
-            if (produto.Pr_Categoria.Equals(""))
-           {
-                throw new CampoVazioException("Campo categoria vazio!");
-            }
-            if (produto.Pr_grife.Equals(""))
+
+            if (p.Pr_unidade.Equals(""))
             {
-                throw new CampoVazioException("Campo grife vazio!");
+
+                throw new CampoVazioException("Campo unidade não selecionado!");
             }
-                          
-            if (produto.Pr_valor.Equals(""))
-           {
+
+            if (p.Pr_Categoria.Equals(""))
+            {
+                throw new CampoVazioException("Campo categoria não selecionado!");
+            }
+            if (p.Pr_grife.Equals(""))
+            {
+                throw new CampoVazioException("Campo grife não selecionado!");
+            }
+
+            if (p.Pr_valor.Equals(""))
+            {
                 throw new CampoVazioException("Campo Valor vazio!");
             }
-            if (produto.Pr_estoqueminimo.Equals(""))
-           {
-              throw new CampoVazioException("Campo  Estoque vazio!");
-           }
+            if (p.Pr_estoqueminimo.Equals(""))
+            {
+                throw new CampoVazioException("Campo  Estoque vazio!");
+            }
 
         }
 
+        public void ValidarGuid(Produto p)
+        {
+            if (p == null)
+            {
+                throw new GuidVazioException("Int vazio ou inválido");
+            }
 
-        //public void Insert(Produto produto)
-        //{
-        //    controladorproduto.Insert(produto);
-        //}
-
-        //public void Update(Produto produto)
-        //{
-        //    controladorproduto.update(produto);
-        //}
-
-
-        //public void Delete(Produto produto)
-        //{
-        //    controladorproduto.delete(produto);          
-        //}
-
-        //public void Duplicidade(Produto produto)
-        //{
-        //    controladorproduto.verificaduplicidade(produto);
-        //}
-
-        //List<Produto> select
-        //{
-
-        //     get
-        //    {
-        //       return select;
-        //    }
-
-        //}
-
-
-
+        }
 
     }
 }

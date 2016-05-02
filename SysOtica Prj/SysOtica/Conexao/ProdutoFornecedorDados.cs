@@ -17,15 +17,40 @@ namespace SysOtica.Conexao
         public void inserir(ProdutoFornecedor pf)
         {
 
-            string sql = "INSERT INTO produtofornecedor  Values (' " + pf.Pf_qtd + "', '" + pf.Pf_dtentrada + "', '" + pf.P.Pf_id + "', '" + pf.F.Fr_id + "','" + pf.Pf_tipo + "', '" + pf.Pf_observacoes + "')";
-
             try
             {
-                conn.AbrirConexao();
-                SqlCommand cmd = new SqlCommand(sql, conn.cone);
-                cmd.ExecuteNonQuery();
-                conn.FecharConexao();
-            }
+               // Produto p = new Produto();                
+               //foreach (Object ProdutoFornecedor in p.Items_pf)
+
+
+                
+
+                    conn.AbrirConexao();
+                    string sql = "INSERT INTO produtofornecedor(pf_qtd, pf_dtentrada, pr_id, pf_tipo, pf_observacoes) Values (@pf_qtd, @pf_dtentrada, @pr_id, @pf_tipo, @pf_observacoes)";
+                    SqlCommand cmd = new SqlCommand(sql, conn.cone);
+
+
+
+                    cmd.Parameters.Add("@pf_qtd", SqlDbType.Int);
+                    cmd.Parameters["@pf_qtd"].Value = pf.Pf_qtd;
+
+                    cmd.Parameters.Add("@pf_dtentrada", SqlDbType.Date);
+                    cmd.Parameters["@pf_dtentrada"].Value = pf.Pf_dtentrada;
+
+                    cmd.Parameters.Add("@pr_id", SqlDbType.Int);
+                    cmd.Parameters["@pr_id"].Value = pf.P.Items_pf;
+
+                    //cmd.Parameters.Add("@fr_id", SqlDbType.Int);
+                    //cmd.Parameters["@fr_id"].Value = produtofornecedor.Fr_id;
+
+                    cmd.Parameters.Add("@pf_tipo", SqlDbType.VarChar);
+                    cmd.Parameters["@pf_tipo"].Value = pf.Pf_tipo;
+
+                    cmd.Parameters.Add("@pf_observacoes", SqlDbType.VarChar);
+                    cmd.Parameters["@pf_observacoes"].Value = pf.Pf_observacoes;
+                }
+            
+
             catch (SqlException e)
             {
                 throw new BancoDeDadosException("Falha na comunicação com o banco de dados. \n" + e.Message);

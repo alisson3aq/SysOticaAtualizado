@@ -155,3 +155,7 @@ CREATE TABLE receita(
   CONSTRAINT cliente_receita_fk FOREIGN KEY (cl_id) REFERENCES cliente (cl_id),
   CONSTRAINT venda_receita_fk FOREIGN KEY (vn_id) REFERENCES venda (vn_id)
 );
+
+
+CREATE TABLE Carros (cr_id INT, 
+                     marca VARCHAR(20));

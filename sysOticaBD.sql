@@ -159,3 +159,6 @@ CREATE TABLE receita(
 
 CREATE TABLE Carros (cr_id INT, 
                      marca VARCHAR(20));
+
+
+CREATE TABLE ArrozComFeijao()
